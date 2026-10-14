@@ -4,14 +4,15 @@ import com.google.gson.GsonBuilder;
 
 
 import java.io.BufferedWriter;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
 
-        Persona persona1 = new Persona(null, 25);
+        /*ArrayList<Persona> persona1 = new ArrayList<>();
+        persona1.add(new Persona(null, 25));
 
         Gson gson = new GsonBuilder().serializeNulls().create(); // Configura Gson para serializar valores nulos
 
@@ -23,9 +24,7 @@ public class Main {
             bf.write(json);
         } catch (Exception e) {
             System.out.println("Error al escribir el archivo: " + e.getMessage());
-        } catch (IOException e) {
-            System.out.println("Error de E/S: " + e.getMessage());
-        }
+        }*/
     }
 }
 
