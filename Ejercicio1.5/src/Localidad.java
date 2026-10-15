@@ -10,7 +10,7 @@ public class Localidad {
     String url;
     int year;
 
-    public Localidad(String id, float latitude, float longitude, int elevation, String name, String url, int year) {
+    public Localidad() {
         this.id = id;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -74,5 +74,12 @@ public class Localidad {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    @Override
+    public String toString() {
+        return "Localidad [id=" + id + ", latitude=" + latitude
+                + ", longitude=" + longitude + ", elevation=" + elevation
+                + ", name=" + name + ", url=" + url + ", year=" + year + "]";
     }
 }
