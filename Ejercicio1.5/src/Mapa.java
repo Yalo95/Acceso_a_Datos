@@ -1,8 +1,5 @@
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.util.HashMap;
-import java.util.Scanner;
 
 public class Mapa implements Serializable {
 
@@ -28,12 +25,14 @@ public class Mapa implements Serializable {
         }
         return texto;
     }
-    public float [] getCoordenadas(String id) { // Devuelve un array con las coordenadas de la localidad con el ID especificado
-        Localidad l = localidades.get(id);
-        if (l != null) {
-            return new float[]{l.getLatitude(), l.getLongitude()};
+    public float [] getCoordenadas(String name) { // Devuelve un array con las coordenadas de la localidad con el nombre especificado
+        for (Localidad l : localidades.values()) { //El for pasa por cada localidad del mapa, los valores del mapa.
+            if(l.getName().equalsIgnoreCase(name.trim())){ //Cogemos el nombre de la localidad y le quitamos los espacios con trim.
+                                                            // El equals comprara los dos nombres (Strings) y con el IgnoreCase se ignora Mayus y Minusculas.
+                return new float[] {l.getLatitude(), l.getLongitude()}; //Guardamos en un array la longitud y la latitud
+            }
         }
-        return null;
+        return null; //Devuelve null si no hay coincidencia.
     }
 
 

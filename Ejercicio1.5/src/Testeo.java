@@ -18,7 +18,7 @@ public class Testeo {
                 if (linea.isEmpty()){               // en blanco al principio y al final
                     continue;
                 }
-                String [] campos = linea.split(";"); // Creamos una lista para guardar los distintos campos del archivo. Asegurandonos
+                String [] campos = linea.split(","); // Creamos una lista para guardar los distintos campos del archivo. Asegurandonos
                                                         // de que se el string de la linea se parte por cada ; (gracias al metodo split)
 
                 //Creamos la localidad y le añadimos al Mapa
@@ -32,7 +32,6 @@ public class Testeo {
                 localidad.setYear(Integer.parseInt(campos[6].trim()));
                 mapa.addLocalidad(localidad);
             }
-
         } catch (FileNotFoundException e) {
             System.out.println("No ha sido posible encontrar el archivo " + e.getMessage());
         }
@@ -50,20 +49,21 @@ public class Testeo {
     }
     public void testeoBuscador() {
         //Aquí leemos el objeto mapa.dat
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(ruta + " \\mapa.dat"))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(ruta + "\\mapa.dat"))) {
             mapa = (Mapa) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
+            return;
         }
         try(Scanner scanner = new Scanner(System.in)){
             System.out.println("Escribe la localidad de la que quieras saber la longitud y latitud: ");
-            String nombreLocalidad = scanner.next();
+            String nombreLocalidad = scanner.nextLine();
 
-            float[] coord = mapa.getCoordenadas(nombreLocalidad);
-            if (coord == null) {
-                System.out.println("No existe la localidad " + nombreLocalidad);
+            float[] coord = mapa.getCoordenadas(nombreLocalidad); //Guardamos en el array el resultado de la comparacion del metoso getCoordenadas
+            if (coord != null) { //Si hay una coincidencia entre ambos nombres, nos indica los datos
+                System.out.println("Latitud: " + coord[0] + " | Longitud: " + coord[1]);
             } else {
-                System.out.println("Longitud: " + coord[0] + " | Latitud: " + coord[1]);
+                System.out.println("No existe la localidad " + nombreLocalidad);
             }
         } catch (Exception e) {
             throw new RuntimeException(e);

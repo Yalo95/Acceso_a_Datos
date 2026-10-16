@@ -1,6 +1,6 @@
+import java.io.Serializable;
 
-
-public class Localidad {
+public class Localidad implements Serializable {
 
     String id;
     float latitude;
