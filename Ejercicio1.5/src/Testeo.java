@@ -1,15 +1,13 @@
 import java.io.*;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Testeo {
-    String ruta = "C:\\Users\\Work\\Desktop\\DAM\\2ºDAM\\Acceso a Datos\\Acceso_a_Datos\\Ejercicio1.5\\geografia.csv";
+    String ruta = "C:\\Users\\Work\\Desktop\\DAM\\2ºDAM\\Acceso a Datos\\Acceso_a_Datos\\Ejercicio1.5";
+    Mapa mapa = new Mapa(); //Llamamos a la clase Mapa
+
     public void testeoGuardar (){
 
-        Mapa mapa = new Mapa();
-
-
-        try (Scanner sc = new Scanner(new File(ruta), "UTF-8")){
+        try (Scanner sc = new Scanner(new File(ruta + "\\geografia.csv"), "UTF-8")){
 
             if(sc.hasNextLine()){ // Para saltar la cabecera
                 sc.nextLine();
@@ -51,18 +49,24 @@ public class Testeo {
         }
     }
     public void testeoBuscador() {
+        //Aquí leemos el objeto mapa.dat
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(ruta + " \\mapa.dat"))) {
+            mapa = (Mapa) ois.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        try(Scanner scanner = new Scanner(System.in)){
+            System.out.println("Escribe la localidad de la que quieras saber la longitud y latitud: ");
+            String nombreLocalidad = scanner.next();
 
-        try (Scanner sc = new Scanner(new File("C:\\Users\\Work\\Desktop\\DAM\\2ºDAM\\Acceso a Datos\\Acceso_a_Datos\\Ejercicio1.5\\mapa.dat"), "UTF-8")) {
-
-            if (sc.hasNextLine()) { // Para saltar la cabecera
-                sc.nextLine();
+            float[] coord = mapa.getCoordenadas(nombreLocalidad);
+            if (coord == null) {
+                System.out.println("No existe la localidad " + nombreLocalidad);
+            } else {
+                System.out.println("Longitud: " + coord[0] + " | Latitud: " + coord[1]);
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }
-
-    static void main() {
-
     }
 }
