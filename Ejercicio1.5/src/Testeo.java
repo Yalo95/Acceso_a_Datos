@@ -52,6 +52,14 @@ public class Testeo {
     }
     public void testeoBuscador() {
 
+        try (Scanner sc = new Scanner(new File("C:\\Users\\Work\\Desktop\\DAM\\2ºDAM\\Acceso a Datos\\Acceso_a_Datos\\Ejercicio1.5\\mapa.dat"), "UTF-8")) {
+
+            if (sc.hasNextLine()) { // Para saltar la cabecera
+                sc.nextLine();
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     static void main() {
