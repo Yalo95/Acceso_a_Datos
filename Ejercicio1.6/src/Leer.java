@@ -2,6 +2,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 
 public class Leer {
 
@@ -34,36 +35,27 @@ public class Leer {
 
         return valido;
     }
-    public static void particion (Path fichero, int trozosValidados)  {
+    public static void particion(Path fichero, int trozosValidados) {
 
-        try (InputStream ips = new BufferedInputStream(new FileInputStream(fichero.toFile()))){ //Como no puede leer un path como ruta lo pasamos a file con .toFile
+        try {
+            byte[] datos = Files.readAllBytes(fichero);
+            int tamanioTrozo = datos.length / trozos;
 
-            long tamanioTotal = Files.size(fichero); //Con este Files.size() nos devuelve el numero de bytes que ocupa el fichero.
-            long tamanioTrozo = tamanioTotal/trozosValidados; //Operación para obtener el tamaño de cada trozo.
-            long tamanioRestante = tamanioTotal%trozosValidados; //El operador % nos devuelve el resto directamente de la operacion marcada.
-
-            // Aseguramos que no se pidan mas trozos que bytes tiene el fichero o que el fichero no esté vacío
             if (tamanioTrozo == 0) {
-                System.out.println("El fichero tiene menos bytes que trozos pedidos, no se puede dividir.");
+                System.out.println("El fichero es demasiado pequeño para dividirlo en " + trozos + " trozos.");
                 return;
             }
-            System.out.println("Estos son los diferentes tamaños: " + "Tamaño Total: " + tamanioTotal + "\n" +
-                    "Tamaño de cada trozo: " + tamanioTrozo + "\n" + "Tamaño restante: " + tamanioRestante);
 
-            for (int i = 0; i < trozosValidados; i++) {
+            for (int i = 0; i < trozos; i++) {
+                int inicio = i * tamanioTrozo;
+                int fin = (i == trozos - 1) ? datos.length : inicio + tamanioTrozo;
 
-                long bytesDelTrozo = tamanioTrozo;
-                if (i == trozosValidados - 1) {
-                    bytesDelTrozo += tamanioRestante;   // el último trozo absorbe el resto
-                }
-
-                try (FileOutputStream salida = new FileOutputStream(fichero + ".parte" + (i + 1))) {
-                    for (long j = 0; j < bytesDelTrozo; j++) {
-                        salida.write(ips.read());
-                    }
-                }
+                byte[] trozo = Arrays.copyOfRange(datos, inicio, fin);
+                Files.write(Paths.get(fichero + ".parte" + (i + 1)), trozo);
             }
-            System.out.println("Fichero dividido en " + trozosValidados + " trozos.");
+
+            System.out.println("Fichero dividido en " + trozos + " trozos.");
+
         } catch (IOException e) {
             System.out.println("No se ha podido realizar la partición: " + e.getMessage());
         }
