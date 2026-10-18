@@ -50,9 +50,9 @@ public class Leer {
                 int fin = (i == trozosValidados - 1) ? datos.length : inicio + tamanioTrozo;//Posición donde acaba (sin incluirla, porque empieza en 0, por eso el -1).
                 //En el último trozo llega hasta el final del array, así absorbe los bytes sobrantes de la división y no se pierde ninguno
                 byte[] trozo = Arrays.copyOfRange(datos, inicio, fin);//copyOfRange crea un array nuevo con una copia de las posiciones desde inicio hasta fin (sin incluir fin).
-                // Por ejemplo, copyOfRange(datos, 2, 4) devuelve las posiciones 2 y 3.
+                // Por ejemplo, copyOfRange(datos, 2, 4) devuelve las posiciones 2 y 3. En este caso seria fin - 1.
                 Files.write(Paths.get(fichero + ".parte" + (i + 1)), trozo);//Crea el fichero "nombre.parteN" (N empieza en 1) y
-                // escribe en él los bytes del trozo
+                // escribe en él los bytes del array de trozo para cada trozo.
             }
             System.out.println("Fichero dividido en " + trozosValidados + " trozos.");
         } catch (IOException e) {
@@ -80,5 +80,6 @@ public class Leer {
         //Hay que compilar con javac Leer.java en la terminal dentro de la carpeta donde este Leer.java.
         // Asi se crea Leer.class en la carpeta src. Este paso de compilar hay que hacerlo cada vez que haya un cambio en Leer.java
         //por minimo que sea. Se puede poner asi en la terminal javac Leer.java; java Leer texto.txt 4 para ahorrar tiempo.
+        //En la terminal tenemos el length que nos indica el numero de bytes de cada documento. Si la suma es = a la del fichero, esta bien.
     }
 }
