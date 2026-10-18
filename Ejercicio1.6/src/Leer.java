@@ -38,24 +38,23 @@ public class Leer {
     public static void particion(Path fichero, int trozosValidados) {
 
         try {
-            byte[] datos = Files.readAllBytes(fichero);
-            int tamanioTrozo = datos.length / trozos;
+            byte[] datos = Files.readAllBytes(fichero); //Leemos el fichero y lo guardamos en bytes en un array, con 1 byte por posicion(Ej: Un fichero de 10 byte da un array de 10 posiciones)
+            int tamanioTrozo = datos.length / trozosValidados; //Hacemos el cálculo para saber el tamaño de cada trozo en entero.
 
-            if (tamanioTrozo == 0) {
-                System.out.println("El fichero es demasiado pequeño para dividirlo en " + trozos + " trozos.");
+            if (tamanioTrozo == 0) { //Nos aseguramos de que el fichero se pueda dividir en los números de trozos.
+                System.out.println("El fichero es demasiado pequeño para dividirlo en " + trozosValidados + " trozos.");
                 return;
             }
-
-            for (int i = 0; i < trozos; i++) {
-                int inicio = i * tamanioTrozo;
-                int fin = (i == trozos - 1) ? datos.length : inicio + tamanioTrozo;
-
-                byte[] trozo = Arrays.copyOfRange(datos, inicio, fin);
-                Files.write(Paths.get(fichero + ".parte" + (i + 1)), trozo);
+            for (int i = 0; i < trozosValidados; i++) {// Una vuelta por cada trozo en el que hay que dividir el fichero
+                int inicio = i * tamanioTrozo;//Posición del array donde empieza este trozo(cada uno empieza donde acabó el anterior, de ahi la multiplicacion)
+                int fin = (i == trozosValidados - 1) ? datos.length : inicio + tamanioTrozo;//Posición donde acaba (sin incluirla, porque empieza en 0, por eso el -1).
+                //En el último trozo llega hasta el final del array, así absorbe los bytes sobrantes de la división y no se pierde ninguno
+                byte[] trozo = Arrays.copyOfRange(datos, inicio, fin);//copyOfRange crea un array nuevo con una copia de las posiciones desde inicio hasta fin (sin incluir fin).
+                // Por ejemplo, copyOfRange(datos, 2, 4) devuelve las posiciones 2 y 3.
+                Files.write(Paths.get(fichero + ".parte" + (i + 1)), trozo);//Crea el fichero "nombre.parteN" (N empieza en 1) y
+                // escribe en él los bytes del trozo
             }
-
-            System.out.println("Fichero dividido en " + trozos + " trozos.");
-
+            System.out.println("Fichero dividido en " + trozosValidados + " trozos.");
         } catch (IOException e) {
             System.out.println("No se ha podido realizar la partición: " + e.getMessage());
         }
@@ -70,14 +69,13 @@ public class Leer {
         //args[0] es el nombre del fichero
         String rutaArchivo = args[0];
         Path fichero = Paths.get(rutaArchivo);
-        // args[1] es "4". Por eso lo guardamos en un String, para convertirlo en el metodo validarNumeroTrozos.
+        // args[1] es "4". Por eso lo guardamos en un String, para validarlo en el metodo validarNumeroTrozos.
         String numeroDeTrozos = args[1];
 
-            if (!validarFicheroEntrada(fichero) || !validarNumeroTrozos(numeroDeTrozos)) { //Para saber si el fichero y el numero no son validos y cerrar el programa
-                return; //Para dar por concluido el programa
-            }
-
-        int trozosValidados = Integer.parseInt(numeroDeTrozos);
+        if (!validarFicheroEntrada(fichero) || !validarNumeroTrozos(numeroDeTrozos)) { //Para saber si el fichero y el numero no son validos y cerrar el programa
+            return; //Para dar por concluido el programa
+        }
+        int trozosValidados = Integer.parseInt(numeroDeTrozos);//Pasamos de String a entero args[1]
         particion(fichero, trozosValidados);
         //Hay que compilar con javac Leer.java en la terminal dentro de la carpeta donde este Leer.java.
         // Asi se crea Leer.class en la carpeta src. Este paso de compilar hay que hacerlo cada vez que haya un cambio en Leer.java
