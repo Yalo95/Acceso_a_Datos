@@ -1,4 +1,4 @@
-package personal;
+package org.example;
 
 import java.util.List;
 import java.util.Scanner;

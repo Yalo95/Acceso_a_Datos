@@ -1,4 +1,4 @@
-package personal;
+package org.example;
 
 import java.io.*;
 import java.lang.reflect.Type;
