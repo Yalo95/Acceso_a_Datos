@@ -3,8 +3,8 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Agregacion de objetos Persona. */
-public class Personal {
+
+public class Personal {//Agregacion de objetos Persona
 
     private List<Persona> lista;
 
