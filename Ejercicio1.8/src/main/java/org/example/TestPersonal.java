@@ -11,7 +11,7 @@ public class TestPersonal {
         String fichero = sc.nextLine();
 
         List<Persona> lista;
-        if (fichero.endsWith(".xml")) {
+        if (fichero.endsWith(".xml")) {//LLamamos a los metodos de lectura segun su formato.
             lista = Auxiliar.leerXML(fichero);
         } else if (fichero.endsWith(".json")) {
             lista = Auxiliar.leerJSON(fichero);
@@ -20,11 +20,13 @@ public class TestPersonal {
         }
 
         Personal personal = new Personal(lista);
-        System.out.println("Personas cargadas: " + lista.size());
+        System.out.println("Personas cargadas: " + lista.size());//Crea el objeto Personal pasándole la lista leída,
+                                                                // y muestra cuántas personas hay (size() devuelve el tamaño de la lista).
 
-        menu(personal);
+        menu(personal);//Entra en el menú. El programa se queda aquí hasta que el usuario elige la opción 0.
 
-        Auxiliar.escribirCSV(personal.getLista());
+        Auxiliar.escribirCSV(personal.getLista());//Cuando el usuario sale del menú, se guarda la lista
+                                                // (con las personas que se hayan borrado) en un CSV nuevo, usando el método de Auxiliar.
     }
 
     public static void menu(Personal personal) {
