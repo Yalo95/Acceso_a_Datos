@@ -6,15 +6,15 @@ import java.util.List;
 
 public class Personal {//Agregacion de objetos Persona
 
-    private List<Persona> lista;
+    private List<Persona> lista; //Donde vamos a guardar todas las personas
 
-    // Constructor que inicializa la coleccion vacia
+
     public Personal() {
         this.lista = new ArrayList<>();
-    }
+    }//Constructor vacio que inicializa la coleccion vacia
 
     // Constructor que inicializa con una lista ya existente
-    public Personal(List<Persona> personas) {
+    public Personal(List<Persona> personas) {//Creamos una copia de una lista que ya existe
         this.lista = new ArrayList<>(personas);
     }
 
@@ -24,30 +24,29 @@ public class Personal {//Agregacion de objetos Persona
 
     public void addPersona(Persona p) {
         lista.add(p);
-    }
+    } //Añadimos personas a la lista
 
-    /** Devuelve las personas de un pais (sin distinguir mayusculas). */
-    public List<Persona> getPersonasPorPais(String pais) {
-        List<Persona> resultado = new ArrayList<>();
-        for (Persona p : lista) {
-            if (p.getCountry() != null && p.getCountry().trim().equalsIgnoreCase(pais.trim())) {
+
+    public List<Persona> getPersonasPorPais(String pais) {//Devuelve una lista nueva con las personas que son de ese país.
+        List<Persona> resultado = new ArrayList<>(); //Lista vacía
+        for (Persona p : lista) { //Recorremos la lista
+            if (p.getCountry() != null && p.getCountry().trim().equalsIgnoreCase(pais.trim())) { //equalsIgnoreCase compara textos ignorando mayus y minus.
                 resultado.add(p);
             }
         }
-        return resultado;
+        return resultado;//Devolvemos la lista con las personas que coinciden en país.
     }
 
-    /** Borra la persona con ese email. Devuelve true si se borro. */
-    public boolean borrarPorEmail(String email) {
+    public boolean borrarPorEmail(String email) {//Para borrar a una persona pasandole el email de la misma.
         for (int i = 0; i < lista.size(); i++) {
             if (lista.get(i).getEmail().equalsIgnoreCase(email.trim())) {
                 lista.remove(i);
-                return true;
+                return true; //Devuelve true si lo ha encontrado y borrado de la lista.
             }
         }
-        return false;
+        return false;//Devuelve false si no lo encuentra
     }
-
+    //Cada uno llama al metodo de lectura correspondiente de Auxiliar, que devuelve una lista de personas, y la añade entera con addAll
     public void addDesdeCSV(String path) {
         lista.addAll(Auxiliar.leerCSV(path));
     }
@@ -61,11 +60,12 @@ public class Personal {//Agregacion de objetos Persona
     }
 
     @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
+    public String toString() { // Vamos añadiendo al sb vacío cada persona y un salto de línea, y al terminar devuelve todo como un solo String
+        StringBuilder sb = new StringBuilder();//StringBuilder (es como una libreta vacía) sirve para ir uniendo texto de forma eficiente
+                                        // Es lo mismo que haber hecho texto = texto + p + "\n" dentro del bucle, pero más eficiente.
         for (Persona p : lista) {
-            sb.append(p).append("\n");
+            sb.append(p).append("\n"); //Se añade el texto de esa persona a sb y añade un salto de línea, para que cada persona quede en su línea
         }
-        return sb.toString();
+        return sb.toString();//Para convertir todo en un String y devolverlo.
     }
 }

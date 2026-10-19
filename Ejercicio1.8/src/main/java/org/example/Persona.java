@@ -56,10 +56,17 @@ public class Persona { //Clase Básica POJO que solo guarda datos
     // Dos personas son iguales si tienen el mismo email, calculando un número a partir del email.
     //Si dos objetos son iguales según equals, deben tener el mismo hashCode.Por eso se calcula con el mismo campo que usa equals.
     @Override
-    public boolean equals(Object obj) {//Para saber si dos personas son la misma. Lo son si tienen el mismo email(Es el unico atributo que no se puede repetir aqui).
-        if (this == obj) return true;//Si es el mismo objeto en memoria, devuelve true
-        if (obj == null || getClass() != obj.getClass()) return false;//Si el otro es null o de otra clase, devuelve false
-        Persona otra = (Persona) obj;//Si no, convierte el objeto a Persona y compara los emails con Objects.equals, que no falla si alguno es null.
-        return Objects.equals(email, otra.email);
+    public boolean equals(Object obj) { //Queremos que dos Persona sean iguales si tienen el mismo email, aunque sean objetos distintos.
+        // Se elige el email porque es el único dato que identifica a cada persona
+        if (obj instanceof Persona) {//Comprobamos que el objeto es realmente una Persona. Si fuera un String o un número, no tendría sentido comparar emails.
+            // Además, si obj es null, instanceof da false, así que también cubre ese caso.
+            Persona otra = (Persona) obj;//Esto es un cast, convertimos el Object en Persona. Es seguro porque con el if anterior comprobamos
+            //que es tipo Persona. El casteo hace falta porque, aunque sabemos que es una Persona, Java solo ve un Object, y un Object no tiene el atributo
+            //email. Con el cast ya podemos acceder a otra.email
+            return email.equals(otra.email);
+            //email es el email de persona que llama al método) y otra.email es el email de la otra persona.
+            // Con String.equals comparamos el contenido de los dos textos, y se devuelve true si son iguales.
+        }
+        return false;
     }
 }
