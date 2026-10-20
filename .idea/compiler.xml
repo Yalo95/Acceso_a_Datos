@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="MainTestGsn" />
+        <module name="Ejercicio1.8" />
         <module name="Jaxb" />
       </profile>
     </annotationProcessing>

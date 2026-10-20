@@ -22,9 +22,10 @@ import com.google.gson.Gson;
 public class Auxiliar {
 
     // Lee un CSV y devuelve una lista de Persona
-    public static List<Persona> leerCSV(String path) {
+    public static List<Persona> leerCSV(String fichero) {
+        String ruta = "Ejercicio1.8\\src\\main\\resources\\csv\\" + fichero;
         List<Persona> lista = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
             br.readLine(); // cabecera, se ignora
             String linea;
             while ((linea = br.readLine()) != null) {//Lee la siguiente línea y la guarda en linea. Repite mientras no sea null
@@ -62,12 +63,13 @@ public class Auxiliar {
     }
 
 
-    public static List<Persona> leerXML(String path) {//Lee un XML (DOM) y devuelve una lista de Persona
+    public static List<Persona> leerXML(String fichero) {//Lee un XML (DOM) y devuelve una lista de Persona
+        String ruta = "Ejercicio1.8\\src\\main\\resources\\xml\\" + fichero;
         List<Persona> lista = new ArrayList<>();
         try {
             DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             //Crea el analizador dom. Es siempre la misma línea para empezar a leer un XML.
-            Document doc = db.parse(new File(path));//Lee el fichero y construye el árbol completo en memoria. doc representa todo el documento.
+            Document doc = db.parse(new File(ruta));//Lee el fichero y construye el árbol completo en memoria. doc representa todo el documento.
 
             NodeList nodos = doc.getElementsByTagName("persona");//Busca todas las etiquetas <persona> del documento y las devuelve en una lista de nodos
             for (int i = 0; i < nodos.getLength(); i++) {//getLength() dice cuántos nodos hay
@@ -88,9 +90,9 @@ public class Auxiliar {
     }
 
     // Lee un JSON (Gson) y devuelve una lista de Persona
-    public static List<Persona> leerJSON(String path) {
-        List<Persona> lista = new ArrayList<>();
-        try (FileReader fr = new FileReader(path)) {
+    public static List<Persona> leerJSON(String fichero) {
+        String ruta = "Ejercicio1.8\\src\\main\\resources\\json\\" + fichero;        List<Persona> lista = new ArrayList<>();
+        try (FileReader fr = new FileReader(ruta)) {
             Gson gson = new Gson();//Crea el objeto Gson, que convierte entre JSON y objetos Java.
             Persona[] personas = gson.fromJson(fr, Persona[].class);
             //Lee el fichero y lo convierte en un array de Persona. Persona[].class le dice a Gson “el JSON es un array de personas”.
