@@ -34,7 +34,4 @@ public class Mapa implements Serializable {
         }
         return null; //Devuelve null si no hay coincidencia.
     }
-
-
-
 }
