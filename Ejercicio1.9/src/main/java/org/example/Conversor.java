@@ -1,0 +1,87 @@
+package org.example;
+
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class Conversor {
+
+
+
+    public static void main(String[] args) {
+
+        //Comprobamos y validamos los argumentos para ejecutar el programa.
+        if (args.length != 2){ //Con esto nos aseguramos que la sintaxis del comando de ejecucion es la necesaria para desarrollar el programa.
+            System.out.println("La sintaxis correcta para ejecutar el programa debe ser: java Conversor nombre_fichero nombre_fichero_reconvertido");
+            return;
+        }
+
+        // Comprobamos que todos los ficheros existen antes de crear el fichero final
+        for (String argumento : args) {
+            File fichero = new File(argumento);
+            if (!fichero.isFile() || !fichero.canRead()) {
+                System.out.println("El fichero " + argumento + " no existe o no se puede leer");
+                return;
+            }
+        }
+
+        //args[0] es el nombre del fichero
+        String nombre_fichero1 = args[0];
+        Path fichero_convertir = Paths.get(nombre_fichero1);//convertimos el argumento en Path(ruta) para poder pasarlo a las funciones
+
+        // args[1] El fichero a convertir
+        String nombre_fichero2 = args[1];
+
+        //
+        if (nombre_fichero1.endsWith(".xml") && nombre_fichero2.endsWith(".json")){
+            convert_to_json(fichero_convertir);
+        } else if (nombre_fichero1.endsWith(".json") && nombre_fichero2.endsWith(".xml")){
+            convert_to_xml(fichero_convertir);
+        }else {
+            System.out.println("Fallo en el nombre o en la extension del fichero, la conversión no se puede realizar");
+        }
+
+    }
+
+    private static void convert_to_json(Path fichero_convertir){
+
+        List biblioteca = new ArrayList<>();
+
+        try {
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            Document document = db.parse(new File("Ejercicio1.8\\src\\main\\resources\\biblioteca_ejemplo.xml"));
+
+            String elemento_raiz = document.getDocumentElement().normalize(); //limpia y estructura correctamente el árbol de un documento XML
+            // en la memoria después de haberlo cargado o modificado.
+            NodeList nodeList = document.getElementsByTagName("biblioteca");
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Node node = nodeList.item(i);
+            }
+
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+    private static void convert_to_xml(Path fichero_convertir){
+
+
+    }
+}

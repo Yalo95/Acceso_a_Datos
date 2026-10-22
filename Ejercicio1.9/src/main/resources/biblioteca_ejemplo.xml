@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ejercicio práctico: convertir este documento XML a JSON -->
+<biblioteca nombre="Biblioteca Municipal" ciudad="Granada" fundacion="1985">
+
+    <direccion>
+        <calle>Calle Mayor</calle>
+        <numero>12</numero>
+        <codigoPostal>18001</codigoPostal>
+        <provincia>Granada</provincia>
+    </direccion>
+
+    <horario>
+        <dia nombre="lunes" apertura="09:00" cierre="20:00"/>
+        <dia nombre="martes" apertura="09:00" cierre="20:00"/>
+        <dia nombre="miercoles" apertura="09:00" cierre="20:00"/>
+        <dia nombre="jueves" apertura="09:00" cierre="20:00"/>
+        <dia nombre="viernes" apertura="09:00" cierre="14:00"/>
+    </horario>
+
+    <libros>
+        <libro id="L001" disponible="true">
+            <titulo>Cien años de soledad</titulo>
+            <autor>
+                <nombre>Gabriel</nombre>
+                <apellidos>García Márquez</apellidos>
+                <nacionalidad>Colombiana</nacionalidad>
+            </autor>
+            <anioPublicacion>1967</anioPublicacion>
+            <genero>Novela</genero>
+            <paginas>471</paginas>
+            <precio moneda="EUR">19.95</precio>
+            <etiquetas>
+                <etiqueta>realismo mágico</etiqueta>
+                <etiqueta>clásico</etiqueta>
+                <etiqueta>latinoamericano</etiqueta>
+            </etiquetas>
+        </libro>
+
+        <libro id="L002" disponible="false">
+            <titulo>El Quijote</titulo>
+            <autor>
+                <nombre>Miguel</nombre>
+                <apellidos>de Cervantes Saavedra</apellidos>
+                <nacionalidad>Española</nacionalidad>
+            </autor>
+            <anioPublicacion>1605</anioPublicacion>
+            <genero>Novela</genero>
+            <paginas>1250</paginas>
+            <precio moneda="EUR">24.50</precio>
+            <etiquetas>
+                <etiqueta>clásico</etiqueta>
+                <etiqueta>caballería</etiqueta>
+            </etiquetas>
+            <prestamo>
+                <socio ref="S002"/>
+                <fechaInicio>2026-10-10</fechaInicio>
+                <fechaDevolucion>2026-10-31</fechaDevolucion>
+            </prestamo>
+        </libro>
+
+        <libro id="L003" disponible="true">
+            <titulo>Romancero gitano</titulo>
+            <autor>
+                <nombre>Federico</nombre>
+                <apellidos>García Lorca</apellidos>
+                <nacionalidad>Española</nacionalidad>
+            </autor>
+            <anioPublicacion>1928</anioPublicacion>
+            <genero>Poesía</genero>
+            <paginas>160</paginas>
+            <precio moneda="EUR">12.00</precio>
+            <etiquetas>
+                <etiqueta>poesía</etiqueta>
+            </etiquetas>
+            <sinopsis><![CDATA[Colección de 18 romances donde aparecen "gitanos" & paisajes de Andalucía.]]></sinopsis>
+        </libro>
+    </libros>
+
+    <socios>
+        <socio id="S001" tipo="estudiante">
+            <nombre>Lucía</nombre>
+            <apellidos>Fernández Ruiz</apellidos>
+            <email>lucia.fernandez@example.com</email>
+            <telefono/>
+            <activo>true</activo>
+        </socio>
+        <socio id="S002" tipo="adulto">
+            <nombre>Javier</nombre>
+            <apellidos>Moreno López</apellidos>
+            <email>javier.moreno@example.com</email>
+            <telefono>600123456</telefono>
+            <activo>true</activo>
+        </socio>
+    </socios>
+
+</biblioteca>
