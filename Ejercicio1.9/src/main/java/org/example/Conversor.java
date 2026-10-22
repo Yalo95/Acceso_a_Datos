@@ -2,6 +2,7 @@ package org.example;
 
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -67,8 +68,7 @@ public class Conversor {
             DocumentBuilder db = dbf.newDocumentBuilder();
             Document document = db.parse(new File("Ejercicio1.8\\src\\main\\resources\\biblioteca_ejemplo.xml"));
 
-            String elemento_raiz = document.getDocumentElement().normalize(); //limpia y estructura correctamente el árbol de un documento XML
-            // en la memoria después de haberlo cargado o modificado.
+            Element elemento_raiz = document.getDocumentElement(); //Para obtener el elemento raiz del fichero xml
             NodeList nodeList = document.getElementsByTagName("biblioteca");
             for (int i = 0; i < nodeList.getLength(); i++) {
                 Node node = nodeList.item(i);
