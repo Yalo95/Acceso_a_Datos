@@ -17,7 +17,9 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class Conversor {
@@ -61,19 +63,20 @@ public class Conversor {
 
     private static void convert_to_json(Path fichero_convertir){
 
-        List biblioteca = new ArrayList<>();
+            Map biblioteca = new HashMap();
 
         try {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
-            Document document = db.parse(new File("Ejercicio1.8\\src\\main\\resources\\biblioteca_ejemplo.xml"));
+            Document document = db.parse(new File("Ejercicio1.8\\src\\main\\resources" + fichero_convertir));
 
             Element elemento_raiz = document.getDocumentElement(); //Para obtener el elemento raiz del fichero xml
             NodeList nodeList = document.getElementsByTagName("biblioteca");
             for (int i = 0; i < nodeList.getLength(); i++) {
                 Node node = nodeList.item(i);
-            }
 
+                node.getChildNodes();
+            }
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
