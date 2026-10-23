@@ -16,9 +16,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 
@@ -63,7 +61,7 @@ public class Conversor {
 
     private static void convert_to_json(Path fichero_convertir){
 
-            Map biblioteca = new HashMap();
+        Map biblioteca = new HashMap();
 
         try {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -71,17 +69,23 @@ public class Conversor {
             Document document = db.parse(new File("Ejercicio1.8\\src\\main\\resources" + fichero_convertir));
 
             Element elemento_raiz = document.getDocumentElement(); //Para obtener el elemento raiz del fichero xml
-            NodeList nodeList = document.getElementsByTagName("biblioteca");
-            for (int i = 0; i < nodeList.getLength(); i++) {
+            NodeList nodeList = elemento_raiz.getChildNodes(); //Para obtener los nodos hijos del elemento raiz.
+            for (int i = 0; i < nodeList.getLength(); i++) { //Recorremos los nodos hijos del elemento raiz  y los guardamos en node.
                 Node node = nodeList.item(i);
-
-                node.getChildNodes();
             }
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
 
 
+    }
+    private static Object element_convert (Element element){
+
+        NodeList nodeListChild = element.getChildNodes(); //Para obtener los nodos hijos del elemento raiz.
+        for (int i = 0; i < nodeListChild.getLength(); i++) { //Recorremos los nodos hijos del elemento raiz  y los guardamos en node.
+            Node nodeChild = nodeListChild.item(i);
+        }
+        return ;
     }
     private static void convert_to_xml(Path fichero_convertir){
 
