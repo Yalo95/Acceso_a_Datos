@@ -44,7 +44,8 @@ public class Conversor {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
             Document document = db.parse(new File("Ejercicio1.8\\src\\main\\resources" + fichero_convertir));
-
+            document.getDocumentElement();
+            
             Element elemento_raiz = document.getDocumentElement(); //Para obtener el elemento raiz del fichero xml
             NodeList nodeList = elemento_raiz.getChildNodes(); //Para obtener los nodos hijos del elemento raiz.
             for (int i = 0; i < nodeList.getLength(); i++) { //Recorremos los nodos hijos del elemento raiz  y los guardamos en node.
