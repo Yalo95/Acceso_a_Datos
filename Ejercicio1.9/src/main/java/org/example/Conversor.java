@@ -24,21 +24,21 @@ import java.nio.file.Paths;
 public class Conversor {
 
 
-    private static Files convert_to_json(Path fichero_convertir){
+   /*private static Files convert_to_json(Path fichero_convertir){
 
         String ruta = "Ejercicio1.8\\src\\main\\resources";
 
-        Files ficheroToString = new Files(fichero_convertir);
+
+        try {
+            Files ficheroToString = convert_to_json.(fichero_convertir);
 
                     XML conversion = ficheroToString();
 
         }
-    }
+    }*/
 
     //FORMA MAS TRABAJOSA SIN USAR LAS LIBRERIAS, LO QUE HACEN ESAS LIBRERIAS PARA RECORRER EL ARBOL.//
-    /* private static void convert_to_json(Path fichero_convertir){
-
-        Map biblioteca = new HashMap();
+    private static void convert_to_json(Path fichero_convertir){
 
         try {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -48,23 +48,19 @@ public class Conversor {
             Element elemento_raiz = document.getDocumentElement(); //Para obtener el elemento raiz del fichero xml
             NodeList nodeList = elemento_raiz.getChildNodes(); //Para obtener los nodos hijos del elemento raiz.
             for (int i = 0; i < nodeList.getLength(); i++) { //Recorremos los nodos hijos del elemento raiz  y los guardamos en node.
-                Element nodeChild = (Element) nodeList.item(i); //Se castea para poder guardarlo de nodo a elemento, con .item(i)
-                element_convert(nodeChild);
+                Element nodeChild = (Element) nodeList.item(i);
             }
-
+            element_convert(nodeChild);
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
     }
-    private static Object element_convert (Element nodechild){
+    private static Object element_convert (NodeList nodechild){
 
-        NodeList nodeListChild = nodechild.getChildNodes(); //Para obtener los nodos hijos de los nodos principales.
-        for (int i = 0; i < nodeListChild.getLength(); i++) { //Recorremos los nodos hijos del elemento raiz  y los guardamos en node.
-            Node nodeChild = nodeListChild.item(i);
+        for (int i = 0; i < nodechild.getLength(); i++) { //Recorremos los nodos hijos del elemento raiz  y los guardamos en node.
+            Element nodeChild2 = (Element) nodechild.item(i);//Se castea para poder guardarlo de nodo a elemento, con .item(i)
         }
-
-        return null;
-    }*/
+    }
     private static void convert_to_xml(Path fichero_convertir){
 
         String ruta = "Ejercicio1.8\\src\\main\\resources";
