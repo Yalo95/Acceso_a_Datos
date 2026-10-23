@@ -1,6 +1,7 @@
 package org.example;
 
 
+import org.json.JSONObject;
 import org.json.XML;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -20,24 +21,25 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 
-
 public class Conversor {
 
 
-   /*private static Files convert_to_json(Path fichero_convertir){
+   private static void convert_to_json(Path fichero_convertir, Path fichero_convertido){
 
-        String ruta = "Ejercicio1.8\\src\\main\\resources";
+       try {
 
+            String fichero = Files.readString(fichero_convertir); //Leemos el fichero en String con la libreria Files y guardamos con String
+            JSONObject object_json = XML.toJSONObject(fichero);//Pasamos el string del fichero a un objeto JSON con la libreria de XML, ya bien estructurado y separado.
+            String fichero_json = object_json.toString(); //Convertimos a Strin JSON el objeto anterior.
 
-        try {
-            Files ficheroToString = convert_to_json.(fichero_convertir);
-
-                    XML conversion = ficheroToString();
-
+            Path ficheroJSON = Files.writeString(fichero_convertido,fichero_json);
+           System.out.println("Conversion completada con éxito. El archivo " + fichero_convertir + " se ha convertido a " + fichero_convertido);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-    }*/
+   }
 
-    //FORMA MAS TRABAJOSA SIN USAR LAS LIBRERIAS, LO QUE HACEN ESAS LIBRERIAS PARA RECORRER EL ARBOL.//
+    /*//FORMA MAS TRABAJOSA SIN USAR LAS LIBRERIAS, LO QUE HACEN ESAS LIBRERIAS PARA RECORRER EL ARBOL.//
     private static void convert_to_json(Path fichero_convertir){
 
         try {
@@ -61,8 +63,8 @@ public class Conversor {
         for (int i = 0; i < nodechild.getLength(); i++) { //Recorremos los nodos hijos del elemento raiz  y los guardamos en node.
             Element nodeChild2 = (Element) nodechild.item(i);//Se castea para poder guardarlo de nodo a elemento, con .item(i)
         }
-    }
-    private static void convert_to_xml(Path fichero_convertir){
+    }*/
+    private static void convert_to_xml(Path fichero_convertir, Path fichero_convertido){
 
         String ruta = "Ejercicio1.8\\src\\main\\resources";
 
@@ -91,15 +93,16 @@ public class Conversor {
 
         // args[1] El fichero a convertir
         String nombre_fichero2 = args[1];
+        Path fichero_convertido = Paths.get(nombre_fichero2);//Para pasar a path el argumento numero 2 y poder sacar el archivo1 convertido
 
-        //
+        //Para validar y comprobar las extensiones de los documentos.
         if (nombre_fichero1.endsWith(".xml") && nombre_fichero2.endsWith(".json")){
-            convert_to_json(fichero_convertir);
+            convert_to_json(fichero_convertir,fichero_convertido);
         } else if (nombre_fichero1.endsWith(".json") && nombre_fichero2.endsWith(".xml")){
-            convert_to_xml(fichero_convertir);
+            convert_to_xml(fichero_convertir, fichero_convertido);
         }else {
             System.out.println("Fallo en el nombre o en la extension del fichero, la conversión no se puede realizar");
         }
-
     }
 }
+
