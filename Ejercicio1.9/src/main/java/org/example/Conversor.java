@@ -71,17 +71,17 @@ public class Conversor {
             Element elemento_raiz = document.getDocumentElement(); //Para obtener el elemento raiz del fichero xml
             NodeList nodeList = elemento_raiz.getChildNodes(); //Para obtener los nodos hijos del elemento raiz.
             for (int i = 0; i < nodeList.getLength(); i++) { //Recorremos los nodos hijos del elemento raiz  y los guardamos en node.
-                Node node = nodeList.item(i);
+                Element nodeChild = (Element) nodeList.item(i); //Se castea para poder guardarlo de nodo a elemento, con .item(i)
+                element_convert(nodeChild);
             }
+
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
-
-
     }
-    private static Object element_convert (Element element){
+    private static Object element_convert (Element nodechild){
 
-        NodeList nodeListChild = element.getChildNodes(); //Para obtener los nodos hijos del elemento raiz.
+        NodeList nodeListChild = nodechild.getChildNodes(); //Para obtener los nodos hijos de los nodos principales.
         for (int i = 0; i < nodeListChild.getLength(); i++) { //Recorremos los nodos hijos del elemento raiz  y los guardamos en node.
             Node nodeChild = nodeListChild.item(i);
         }
