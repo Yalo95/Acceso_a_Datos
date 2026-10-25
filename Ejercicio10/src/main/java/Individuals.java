@@ -9,7 +9,7 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)//Para que unicamente al hacer unmarshall se cojan los campos y no los getters and setters.
 public class Individuals {
 
-    @XmlElement(name = "individual")
+    @XmlElement(name = "individual") //Para recoger el elemento individual del xml.
     private List<Individual> individual;//Es lista porque es maxOccurs Unbounded, puede haber muchos individual. Lista si se repite
 
     public Individuals() {}
@@ -23,10 +23,11 @@ public class Individuals {
     }
 
     @Override
-    public String toString() {
+    public String toString() { //Nos ayudamos del StringBuilder y del bucle for para recorrer y guardar cada individuo y mostrar toda su informacion de una manera mas limpia y ordenada.
+
         StringBuilder sb = new StringBuilder();
         for (Individual individuos: this.individual){
-            sb.append(individuos.toString() + "\n");
+            sb.append(individuos.toString() + "\n"); //Aqui añadimos al builder en forma de string cada individuo y al final del recorrido le añadimos un salto de linea para separarlos.
         }
         return "Individuos:[" + "\n" + sb.toString() +"]";
     }

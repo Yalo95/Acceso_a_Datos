@@ -7,7 +7,7 @@ import jakarta.xml.bind.annotation.XmlElement;
 public class Individual {
 
     @XmlElement(name = "name")
-    private String name;
+    private String name; //Private para que no pueda ser cambiado desde otra clase como el main.
     @XmlElement(name = "address")
     private Address address;// Se pone asi porque en el xsd no hya maxOccurs ni MinOccurs, solo puede haber una direccion con una sola coiudad, zip y calle
     //Llama a address porque tiene que estar enlazada con la clase Address
@@ -32,7 +32,7 @@ public class Individual {
     }
 
     @Override
-    public String toString() {
+    public String toString() { //Para seguir imprimiendo por pantalla la informacion
         return "{Nombre: '" + name + "'" + " Dirección: " + address + "}";
     }
 }

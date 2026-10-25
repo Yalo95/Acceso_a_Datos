@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="full_person.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<individuals>
+    <individual>
+        <address>
+            <zip>18007</zip>
+            <city>Granada</city>
+            <street>Primavera</street>
+        </address>
+    </individual>
+    <individual>
+        <name>Luisa</name>
+        <address>
+            <zip>18014</zip>
+            <city>Granada</city>
+            <street>Otoño</street>
+        </address>
+    </individual>
+</individuals>

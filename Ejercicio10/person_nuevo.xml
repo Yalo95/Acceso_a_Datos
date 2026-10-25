@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<individuals>
+    <individual>
+        <name>Manu</name>
+        <address>
+            <zip>18007</zip>
+            <city>Granada</city>
+            <street>Primavera</street>
+        </address>
+    </individual>
+    <individual>
+        <name>Luisa</name>
+        <address>
+            <zip>18014</zip>
+            <city>Granada</city>
+            <street>Otoño</street>
+        </address>
+    </individual>
+</individuals>
