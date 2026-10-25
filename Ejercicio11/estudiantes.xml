@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="estudiantes.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<estudiantado>
+    <estudiante idMatricula="1">
+        <nombre>Juan Pérez</nombre>
+        <direccion>
+            <calle>Calle Mayor</calle>
+            <numero>1</numero>
+            <piso>4</piso>
+            <letra>F</letra>
+            <cp>23234</cp>
+        </direccion>
+        <telefono>600123456</telefono>
+        <email>juan.perez@example.com</email>
+        <matricula>
+            <modulo id="BBDD">
+                <denominacion>Bases de Datos</denominacion>
+                <horas>6</horas>
+            </modulo>
+            <modulo id="AD">
+                <denominacion>Acceso a Datos</denominacion>
+                <horas>6</horas>
+            </modulo>
+        </matricula>
+    </estudiante>
+    <estudiante idMatricula="2">
+        <nombre>María Gómez</nombre>
+        <direccion>
+            <calle>Calle Luna</calle>
+            <numero>10</numero>
+            <piso>3</piso>
+            <letra>A</letra>
+            <cp>28900</cp>
+        </direccion>
+        <telefono>610234567</telefono>
+        <email>maria.gomez@example.com</email>
+        <matricula>
+            <modulo id="PROG">
+                <denominacion>Programación</denominacion>
+                <horas>8</horas>
+            </modulo>
+            <modulo id="ED">
+                <denominacion>Entornos de Desarrollo</denominacion>
+                <horas>3</horas>
+            </modulo>
+        </matricula>
+    </estudiante>
+    <estudiante idMatricula="3">
+        <nombre>Carlos Ruiz</nombre>
+        <direccion>
+            <calle>Calle Sol</calle>
+            <numero>5</numero>
+            <piso>2</piso>
+            <letra>B</letra>
+            <cp>28002</cp>
+        </direccion>
+        <telefono>620345678</telefono>
+        <email>carlos.ruiz@example.com</email>
+        <matricula>
+            <modulo id="DWES">
+                <denominacion>Desarrollo Web en Entorno Servidor</denominacion>
+                <horas>5</horas>
+            </modulo>
+            <modulo id="AD">
+                <denominacion>Acceso a Datos</denominacion>
+                <horas>6</horas>
+            </modulo>
+        </matricula>
+    </estudiante>
+    <estudiante idMatricula="4">
+        <nombre>Lucía Sánchez</nombre>
+        <direccion>
+            <calle>Calle Mar</calle>
+            <numero>15</numero>
+            <piso>5</piso>
+            <letra>C</letra>
+            <cp>29001</cp>
+        </direccion>
+        <telefono>630456789</telefono>
+        <email>lucia.sanchez@example.com</email>
+        <matricula>
+            <modulo id="LM">
+                <denominacion>Lenguajes de Marcas</denominacion>
+                <horas>4</horas>
+            </modulo>
+            <modulo id="SGE">
+                <denominacion>Sistemas de Gestión Empresarial</denominacion>
+                <horas>5</horas>
+            </modulo>
+        </matricula>
+    </estudiante>
+    <estudiante idMatricula="5">
+        <nombre>Raúl Torres</nombre>
+        <direccion>
+            <calle>Calle Río</calle>
+            <numero>8</numero>
+            <piso>1</piso>
+            <letra>D</letra>
+            <cp>28223</cp>
+        </direccion>
+        <telefono>640567890</telefono>
+        <email>raul.torres@example.com</email>
+        <matricula>
+            <modulo id="DI">
+                <denominacion>Diseño de Interfaces</denominacion>
+                <horas>4</horas>
+            </modulo>
+            <modulo id="DWEC">
+                <denominacion>Desarrollo Web en Entorno Cliente</denominacion>
+                <horas>5</horas>
+            </modulo>
+        </matricula>
+    </estudiante>
+    <estudiante idMatricula="6">
+        <nombre>Elena Morales</nombre>
+        <direccion>
+            <calle>Calle Arco</calle>
+            <numero>22</numero>
+            <piso>2</piso>
+            <letra>A</letra>
+            <cp>28850</cp>
+        </direccion>
+        <telefono>650678901</telefono>
+        <email>elena.morales@example.com</email>
+        <matricula>
+            <modulo id="PSP">
+                <denominacion>Programación de Servicios y Procesos</denominacion>
+                <horas>6</horas>
+            </modulo>
+            <modulo id="DEA">
+                <denominacion>Despliegue de Aplicaciones</denominacion>
+                <horas>4</horas>
+            </modulo>
+        </matricula>
+    </estudiante>
+    <estudiante idMatricula="7">
+        <nombre>Diego Fuentes</nombre>
+        <direccion>
+            <calle>Calle Carmen</calle>
+            <numero>30</numero>
+            <piso>1</piso>
+            <letra>E</letra>
+            <cp>28220</cp>
+        </direccion>
+        <telefono>660789012</telefono>
+        <email>diego.fuentes@example.com</email>
+        <matricula>
+            <modulo id="DWES">
+                <denominacion>Desarrollo Web en Entorno Servidor</denominacion>
+                <horas>5</horas>
+            </modulo>
+            <modulo id="LM">
+                <denominacion>Lenguajes de Marcas</denominacion>
+                <horas>4</horas>
+            </modulo>
+        </matricula>
+    </estudiante>
+    <estudiante idMatricula="8">
+        <nombre>Ana López</nombre>
+        <direccion>
+            <calle>Calle Jardín</calle>
+            <numero>14</numero>
+            <piso>2</piso>
+            <letra>F</letra>
+            <cp>28010</cp>
+        </direccion>
+        <telefono>670890123</telefono>
+        <email>ana.lopez@example.com</email>
+        <matricula>
+            <modulo id="PROG">
+                <denominacion>Programación</denominacion>
+                <horas>8</horas>
+            </modulo>
+            <modulo id="ED">
+                <denominacion>Entornos de Desarrollo</denominacion>
+                <horas>3</horas>
+            </modulo>
+        </matricula>
+    </estudiante>
+    <estudiante idMatricula="9">
+        <nombre>Arturo Sánchez</nombre>
+        <direccion>
+            <calle>Calle Valle</calle>
+            <numero>18</numero>
+            <piso>5</piso>
+            <letra>G</letra>
+            <cp>29004</cp>
+        </direccion>
+        <telefono>680901234</telefono>
+        <email>arturo.sanchez@example.com</email>
+        <matricula>
+            <modulo id="DWES">
+                <denominacion>Desarrollo Web en Entorno Servidor</denominacion>
+                <horas>5</horas>
+            </modulo>
+            <modulo id="DWEC">
+                <denominacion>Desarrollo Web en Entorno Cliente</denominacion>
+                <horas>5</horas>
+            </modulo>
+        </matricula>
+    </estudiante>
+    <estudiante idMatricula="10">
+        <nombre>Laura Gil</nombre>
+        <direccion>
+            <calle>Calle Olivo</calle>
+            <numero>27</numero>
+            <piso>3</piso>
+            <letra>H</letra>
+            <cp>28320</cp>
+        </direccion>
+        <telefono>690123456</telefono>
+        <email>laura.gil@example.com</email>
+        <matricula>
+            <modulo id="BBDD">
+                <denominacion>Bases de Datos</denominacion>
+                <horas>6</horas>
+            </modulo>
+            <modulo id="AD">
+                <denominacion>Acceso a Datos</denominacion>
+                <horas>6</horas>
+            </modulo>
+        </matricula>
+    </estudiante>
+    <estudiante idMatricula="11">
+        <nombre>Sofía Marín</nombre>
+        <direccion>
+            <calle>Calle Río Seco</calle>
+            <numero>19</numero>
+            <piso>4</piso>
+            <letra>A</letra>
+            <cp>28930</cp>
+        </direccion>
+        <telefono>600234567</telefono>
+        <email>sofia.marin@example.com</email>
+        <matricula>
+            <modulo id="SGE">
+                <denominacion>Sistemas de Gestión Empresarial</denominacion>
+                <horas>5</horas>
+            </modulo>
+            <modulo id="DEA">
+                <denominacion>Despliegue de Aplicaciones</denominacion>
+                <horas>4</horas>
+            </modulo>
+        </matricula>
+    </estudiante>
+    <estudiante idMatricula="12">
+        <nombre>Isabel Muñoz</nombre>
+        <direccion>
+            <calle>Calle Alcázar</calle>
+            <numero>6</numero>
+            <piso>2</piso>
+            <letra>B</letra>
+            <cp>28050</cp>
+        </direccion>
+        <telefono>610345678</telefono>
+        <email>isabel.munoz@example.com</email>
+        <matricula>
+            <modulo id="PROG">
+                <denominacion>Programación</denominacion>
+                <horas>8</horas>
+            </modulo>
+            <modulo id="AD">
+                <denominacion>Acceso a Datos</denominacion>
+                <horas>6</horas>
+            </modulo>
+        </matricula>
+    </estudiante>
+    <estudiante idMatricula="13">
+        <nombre>Pablo Ramos</nombre>
+        <direccion>
+            <calle>Calle Faro</calle>
+            <numero>9</numero>
+            <piso>1</piso>
+            <letra>C</letra>
+            <cp>28100</cp>
+        </direccion>
+        <telefono>620456789</telefono>
+        <email>pablo.ramos@example.com</email>
+        <matricula>
+            <modulo id="DWES">
+                <denominacion>Desarrollo Web en Entorno Servidor</denominacion>
+                <horas>5</horas>
+            </modulo>
+            <modulo id="AD">
+                <denominacion>Acceso a Datos</denominacion>
+                <horas>6</horas>
+            </modulo>
+        </matricula>
+    </estudiante>
+    <estudiante idMatricula="14">
+        <nombre>Clara Ortiz</nombre>
+        <direccion>
+            <calle>Calle Palma</calle>
+            <numero>3</numero>
+            <piso>4</piso>
+            <letra>D</letra>
+            <cp>28030</cp>
+        </direccion>
+        <telefono>630567890</telefono>
+        <email>clara.ortiz@example.com</email>
+        <matricula>
+            <modulo id="BBDD">
+                <denominacion>Bases de Datos</denominacion>
+                <horas>6</horas>
+            </modulo>
+            <modulo id="PSP">
+                <denominacion>Programación de Servicios y Procesos</denominacion>
+                <horas>6</horas>
+            </modulo>
+        </matricula>
+    </estudiante>
+    <estudiante idMatricula="15">
+        <nombre>Paula Navarro</nombre>
+        <direccion>
+            <calle>Calle Blanca</calle>
+            <numero>3</numero>
+            <piso>3</piso>
+            <letra>H</letra>
+            <cp>28300</cp>
+        </direccion>
+        <telefono>690987654</telefono>
+        <email>paula.navarro@example.com</email>
+        <matricula>
+            <modulo id="PROG">
+                <denominacion>Programación</denominacion>
+                <horas>8</horas>
+            </modulo>
+            <modulo id="DEA">
+                <denominacion>Despliegue de Aplicaciones</denominacion>
+                <horas>4</horas>
+            </modulo>
+        </matricula>
+    </estudiante>
+</estudiantado>

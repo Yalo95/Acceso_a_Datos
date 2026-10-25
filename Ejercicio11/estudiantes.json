@@ -1,0 +1,379 @@
+{
+    "estudiantado": [
+        {
+            "idMatricula": "1",
+            "nombre": "Juan Pérez",
+            "direccion": {
+                "calle": "Calle Mayor",
+                "numero": "1",
+                "piso": "4",
+                "letra": "F",
+                "cp": "23234"
+            },
+            "telefono": "600123456",
+            "email": "juan.perez@example.com",
+            "matricula": [
+                {
+                    "id": "BBDD",
+                    "denominacion": "Bases de Datos",
+                    "horas": "6"
+                },
+                {
+                    "id": "AD",
+                    "denominacion": "Acceso a Datos",
+                    "horas": "6"
+                }
+            ]
+        },
+        {
+            "idMatricula": "16",
+            "nombre": "Lucía Hernández",
+            "direccion": {
+                "calle": "Calle Aurora",
+                "numero": "12",
+                "piso": "1",
+                "letra": "B",
+                "cp": "28022"
+            },
+            "telefono": "611234567",
+            "email": "lucia.hernandez@example.com",
+            "matricula": [
+                {
+                    "id": "PROG",
+                    "denominacion": "Programación",
+                    "horas": "8"
+                },
+                {
+                    "id": "DWEC",
+                    "denominacion": "Desarrollo Web en Entorno Cliente",
+                    "horas": "5"
+                }
+            ]
+        },
+        {
+            "idMatricula": "3",
+            "nombre": "Carlos Ruiz",
+            "direccion": {
+                "calle": "Calle Sol",
+                "numero": "5",
+                "piso": "2",
+                "letra": "B",
+                "cp": "28002"
+            },
+            "telefono": "620345678",
+            "email": "carlos.ruiz@example.com",
+            "matricula": [
+                {
+                    "id": "DWES",
+                    "denominacion": "Desarrollo Web en Entorno Servidor",
+                    "horas": "5"
+                },
+                {
+                    "id": "AD",
+                    "denominacion": "Acceso a Datos",
+                    "horas": "6"
+                }
+            ]
+        },
+        {
+            "idMatricula": "17",
+            "nombre": "Sofía López",
+            "direccion": {
+                "calle": "Calle Roble",
+                "numero": "20",
+                "piso": "3",
+                "letra": "C",
+                "cp": "28901"
+            },
+            "telefono": "622345678",
+            "email": "sofia.lopez@example.com",
+            "matricula": [
+                {
+                    "id": "SGE",
+                    "denominacion": "Sistemas de Gestión Empresarial",
+                    "horas": "5"
+                },
+                {
+                    "id": "BBDD",
+                    "denominacion": "Bases de Datos",
+                    "horas": "6"
+                }
+            ]
+        },
+        {
+            "idMatricula": "5",
+            "nombre": "Raúl Torres",
+            "direccion": {
+                "calle": "Calle Río",
+                "numero": "8",
+                "piso": "1",
+                "letra": "D",
+                "cp": "28223"
+            },
+            "telefono": "640567890",
+            "email": "raul.torres@example.com",
+            "matricula": [
+                {
+                    "id": "DI",
+                    "denominacion": "Diseño de Interfaces",
+                    "horas": "4"
+                },
+                {
+                    "id": "DWEC",
+                    "denominacion": "Desarrollo Web en Entorno Cliente",
+                    "horas": "5"
+                }
+            ]
+        },
+        {
+            "idMatricula": "18",
+            "nombre": "Alberto García",
+            "direccion": {
+                "calle": "Calle Girasol",
+                "numero": "11",
+                "piso": "4",
+                "letra": "A",
+                "cp": "28930"
+            },
+            "telefono": "630678901",
+            "email": "alberto.garcia@example.com",
+            "matricula": [
+                {
+                    "id": "PSP",
+                    "denominacion": "Programación de Servicios y Procesos",
+                    "horas": "6"
+                },
+                {
+                    "id": "AD",
+                    "denominacion": "Acceso a Datos",
+                    "horas": "6"
+                }
+            ]
+        },
+        {
+            "idMatricula": "7",
+            "nombre": "Diego Fuentes",
+            "direccion": {
+                "calle": "Calle Carmen",
+                "numero": "30",
+                "piso": "1",
+                "letra": "E",
+                "cp": "28220"
+            },
+            "telefono": "660789012",
+            "email": "diego.fuentes@example.com",
+            "matricula": [
+                {
+                    "id": "DWES",
+                    "denominacion": "Desarrollo Web en Entorno Servidor",
+                    "horas": "5"
+                },
+                {
+                    "id": "LM",
+                    "denominacion": "Lenguajes de Marcas",
+                    "horas": "4"
+                }
+            ]
+        },
+        {
+            "idMatricula": "19",
+            "nombre": "Sara Moreno",
+            "direccion": {
+                "calle": "Calle Colón",
+                "numero": "21",
+                "piso": "5",
+                "letra": "B",
+                "cp": "28025"
+            },
+            "telefono": "640890123",
+            "email": "sara.moreno@example.com",
+            "matricula": [
+                {
+                    "id": "DEA",
+                    "denominacion": "Despliegue de Aplicaciones",
+                    "horas": "4"
+                },
+                {
+                    "id": "SGE",
+                    "denominacion": "Sistemas de Gestión Empresarial",
+                    "horas": "5"
+                }
+            ]
+        },
+        {
+            "idMatricula": "20",
+            "nombre": "Samuel Sánchez",
+            "direccion": {
+                "calle": "Calle Sol",
+                "numero": "8",
+                "piso": "2",
+                "letra": "A",
+                "cp": "21004"
+            },
+            "telefono": "555901234",
+            "email": "samuel.sanchez@example.com",
+            "matricula": [
+                {
+                    "id": "DWES",
+                    "denominacion": "Desarrollo Web en Entorno Servidor",
+                    "horas": "5"
+                },
+                {
+                    "id": "DWEC",
+                    "denominacion": "Desarrollo Web en Entorno Cliente",
+                    "horas": "5"
+                }
+            ]
+        },
+        {
+            "idMatricula": "21",
+            "nombre": "Laura Díaz",
+            "direccion": {
+                "calle": "Calle Almendro",
+                "numero": "5",
+                "piso": "2",
+                "letra": "H",
+                "cp": "28350"
+            },
+            "telefono": "600912345",
+            "email": "laura.diaz@example.com",
+            "matricula": [
+                {
+                    "id": "ED",
+                    "denominacion": "Entornos de Desarrollo",
+                    "horas": "3"
+                },
+                {
+                    "id": "AD",
+                    "denominacion": "Acceso a Datos",
+                    "horas": "6"
+                }
+            ]
+        },
+        {
+            "idMatricula": "22",
+            "nombre": "Mateo Ramos",
+            "direccion": {
+                "calle": "Calle Campo",
+                "numero": "17",
+                "piso": "3",
+                "letra": "J",
+                "cp": "28205"
+            },
+            "telefono": "610123456",
+            "email": "mateo.ramos@example.com",
+            "matricula": [
+                {
+                    "id": "DEA",
+                    "denominacion": "Despliegue de Aplicaciones",
+                    "horas": "4"
+                },
+                {
+                    "id": "PROG",
+                    "denominacion": "Programación",
+                    "horas": "8"
+                }
+            ]
+        },
+        {
+            "idMatricula": "23",
+            "nombre": "Lucia Ortega",
+            "direccion": {
+                "calle": "Calle Verde",
+                "numero": "4",
+                "piso": "3",
+                "letra": "C",
+                "cp": "28004"
+            },
+            "telefono": "610234567",
+            "email": "lucia.ortega@example.com",
+            "matricula": [
+                {
+                    "id": "SGE",
+                    "denominacion": "Sistemas de Gestión Empresarial",
+                    "horas": "5"
+                },
+                {
+                    "id": "AD",
+                    "denominacion": "Acceso a Datos",
+                    "horas": "6"
+                }
+            ]
+        },
+        {
+            "idMatricula": "24",
+            "nombre": "Pablo Navas",
+            "direccion": {
+                "calle": "Calle Madrid",
+                "numero": "40",
+                "piso": "2",
+                "letra": "D",
+                "cp": "28890"
+            },
+            "telefono": "620567123",
+            "email": "pablo.navas@example.com",
+            "matricula": [
+                {
+                    "id": "LM",
+                    "denominacion": "Lenguajes de Marcas",
+                    "horas": "4"
+                },
+                {
+                    "id": "DWEC",
+                    "denominacion": "Desarrollo Web en Entorno Cliente",
+                    "horas": "5"
+                }
+            ]
+        },
+        {
+            "idMatricula": "25",
+            "nombre": "Beatriz Herrera",
+            "direccion": {
+                "calle": "Calle Lisboa",
+                "numero": "31",
+                "piso": "3",
+                "letra": "G",
+                "cp": "28420"
+            },
+            "telefono": "680123567",
+            "email": "beatriz.herrera@example.com",
+            "matricula": [
+                {
+                    "id": "BBDD",
+                    "denominacion": "Bases de Datos",
+                    "horas": "6"
+                },
+                {
+                    "id": "PSP",
+                    "denominacion": "Programación de Servicios y Procesos",
+                    "horas": "6"
+                }
+            ]
+        },
+        {
+            "idMatricula": "26",
+            "nombre": "Isabel Reyes",
+            "direccion": {
+                "calle": "Calle Solana",
+                "numero": "25",
+                "piso": "4",
+                "letra": "H",
+                "cp": "28013"
+            },
+            "telefono": "690123987",
+            "email": "isabel.reyes@example.com",
+            "matricula": [
+                {
+                    "id": "DWEC",
+                    "denominacion": "Desarrollo Web en Entorno Cliente",
+                    "horas": "5"
+                },
+                {
+                    "id": "AD",
+                    "denominacion": "Acceso a Datos",
+                    "horas": "6"
+                }
+            ]
+        }
+    ]
+}
