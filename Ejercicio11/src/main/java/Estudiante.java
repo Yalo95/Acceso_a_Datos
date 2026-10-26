@@ -11,6 +11,7 @@ public class Estudiante {
     private Direccion direccion;
     private String telefono;
     private String email;
+
     @XmlElementWrapper(name = "matricula")//Con esto le comunicamos a JAXB que la lista matricula que contiene modulos envuelve a dichos modulos.
     @XmlElement(name = "modulo")//Indica como se llama cada elemento de la lista matricula que contiene modulos
     private List<Modulo> matricula;

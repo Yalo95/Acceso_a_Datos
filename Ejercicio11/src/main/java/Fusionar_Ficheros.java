@@ -1,14 +1,16 @@
 import com.google.gson.Gson;
+import com.sun.source.tree.Tree;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.SchemaOutputResolver;
 import jakarta.xml.bind.Unmarshaller;
 
 
-import java.io.File;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.TreeMap;
 
 public class Fusionar_Ficheros {
@@ -48,33 +50,88 @@ public class Fusionar_Ficheros {
         return estudiantadoJson;
     }
     public TreeMap fusionar_Ficheros (Estudiantado estudiantadoXML, Estudiantado estudiantadoJson){
+        //Añadimos en un TreeMap
+        TreeMap<Integer, Estudiante> estudianteTreeMap = new TreeMap<>();//Se usa TreeMap porque es la manera más eficiente para no repetir claves y sobre todo tener ordenados los idMatricula(Hashmap y listas no los ordenan).
 
-        TreeMap<Integer, Estudiante> estudianteTreeMap = new TreeMap<>();//Se usa TreeMap porque es la manera más eficiente para no repetir claves y tener ordenados los idMatricula.
         for (Estudiante estudiantesXml: estudiantadoXML.getEstudiante()){//Recorremos la lista del estudianteXML.
             estudianteTreeMap.put(estudiantesXml.getIdMatricula(),estudiantesXml);//Lo guardamos cada uno en el TreeMap, con idmatricula como key y el resto del estudiante como valor.
         }
         for (Estudiante estudiantesJson: estudiantadoJson.getEstudiante()){
-            estudianteTreeMap.putIfAbsent(estudiantesJson.getIdMatricula(),estudiantesJson);//Con el putIfAbsent, los id de las matriculas que ya esten se ignoran y no se guardan.
+            if (estudianteTreeMap.putIfAbsent(estudiantesJson.getIdMatricula(),estudiantesJson) != null){ //Con el putIfAbsent, los id de las matriculas que ya esten se ignoran y no se guardan.
+                System.out.println("Estudiante repetido, no se ha añadido el estudiante: " + estudiantesJson.getIdMatricula());
+            }//Y msotramos los estudiantes que se repetían al hacer la fusion de ambos archivos
+
         }
         return estudianteTreeMap;
     }
-    //Solo me queda aqui pasar los datos creados a un fichero de acceso aleatorio. Luego hacer la clase lectura fichero.
-    static void main(String[] args) {
-        Fusionar_Ficheros fusionarFicheros = new Fusionar_Ficheros();
-        Estudiantado xml = fusionarFicheros.leerFicherosXML();
-        Estudiantado json = fusionarFicheros.leerFicherosJson();
-
-
-        //System.out.println(fusionarFicheros.leerFicherosXML());
-        //System.out.println(fusionarFicheros.leerFicherosJson());
-
-        if(fusionarFicheros.fusionar_Ficheros(xml,json) != null){ //Nos aseguramos que el objeto no está vacío y lo mostramos por consola
-           TreeMap treeMap = fusionarFicheros.fusionar_Ficheros (xml,json);
-            System.out.println(treeMap.size());
-            System.out.println(treeMap.keySet());
-        }else{
-            System.out.println("El método Unmarshalling falló.");//Mensaje de error si esta vacío el objeto o no se valida como debe ser.
+    //Aqui le pasamos el fichero donde escribir, el texto y el numero de bytes que debe ocupar
+    //Con este metodo escribimos una cadena en el fichero, ocupando exactamente el tamaño de bytes. Si el texto los sobrepasa, ser corta justo por el tamaño limite.
+    public void escribir_Cadenas (RandomAccessFile raf, String cadena, int tamaño) throws IOException { // Con el throws IOException, si falla la escritura, el error lo gestiona el método que lo llama.
+        if(cadena == null){ //Si la cadena es null, no hay dato y la cambia por texto vacío para que no de fallo porque no se puede llamar a un método sobre null
+            cadena = "";
         }
+        byte[] bytes = cadena.getBytes(StandardCharsets.UTF_8); // Convierte el texto en bytes, para guardarlo en el fichero. Con utf-8 las letras normales ocupan 1 byte y las que tienen tilde o ñ 2 bytes
+        byte[] tamaño_ajustado = Arrays.copyOf(bytes, tamaño); //Un array nuevo con el tamaño de bytes exacto que le pasamos y copia en el los bytes del texto(cadena)
+        raf.write(tamaño_ajustado); //Escribe el array de bytes en el fichero, en la posicion actual del puntero en ese momento.
+    }
+    //Para crear y traspasar los datos del mapa al fichero aleatorio, estudiantes.dat
+    public void fichero_Aleatorio (TreeMap<Integer,Estudiante> estudianteTreeMap){
 
+        try (RandomAccessFile raf = new RandomAccessFile("estudiantes.dat","rw")) {
+
+            raf.setLength(0);//Nos aseguramos de vaciar el archivo antes de traspasar los datos
+
+            for(Estudiante estudiantes: estudianteTreeMap.values()){ //Un for-each que recorre los valores del TreeMap creado anteriormente
+                //ESTUDIANTE
+                raf.writeInt(estudiantes.getIdMatricula()); //Escribimos en el archivo los id de la matricula. Se escribe asi sin limite porque un entero siempre equivale a 4 bytes. No hay que limitar tamaño, ya lo hace java con los tipos alfanumericos
+                escribir_Cadenas(raf, estudiantes.getNombre(), Tamaño_Campos.TAM_NOMBRE); //Aqui le tenemos que indicar para escribirlo mas facilmente el metodo, y dentro de el los parametros de dond ese escribre, que queremos escribir y el tamaño limitante concreto, porque es tipo string este dato.
+                escribir_Cadenas(raf, estudiantes.getTelefono(), Tamaño_Campos.TAM_TELEFONO);
+                escribir_Cadenas(raf, estudiantes.getEmail(), Tamaño_Campos.TAM_EMAIL);
+                //DIRECCION
+                escribir_Cadenas(raf, estudiantes.getDireccion().getCalle(), Tamaño_Campos.TAM_CALLE);
+                raf.writeInt(estudiantes.getDireccion().getNumero());
+                raf.writeInt(estudiantes.getDireccion().getPiso());
+                escribir_Cadenas(raf, estudiantes.getDireccion().getLetra(),Tamaño_Campos.TAM_LETRA);
+                raf.writeInt(estudiantes.getDireccion().getCp());
+                //MODULO 1
+                escribir_Cadenas(raf, estudiantes.getMatricula().get(0).getId(), Tamaño_Campos.TAM_ID_MODULO);
+                escribir_Cadenas(raf, estudiantes.getMatricula().get(0).getDenominacion(), Tamaño_Campos.TAM_DENOMINACION_MODULO);
+                raf.writeInt(estudiantes.getMatricula().get(0).getHoras());
+                //MODULO 2
+                escribir_Cadenas(raf, estudiantes.getMatricula().get(1).getId(), Tamaño_Campos.TAM_ID_MODULO);
+                escribir_Cadenas(raf, estudiantes.getMatricula().get(1).getDenominacion(), Tamaño_Campos.TAM_DENOMINACION_MODULO);
+                raf.writeInt(estudiantes.getMatricula().get(1).getHoras());
+            }
+            //System.out.println(raf.length()); Para ver cuantos bytes ocupa estudiantes.dat. Si esa cantidad es igual al Nº Registros(26) * Tamaño de cada Fichero(159), es correcto el proceso.
+
+        } catch (IOException e) {
+            System.out.println("No se ha podido traspasar los datos al fichero aleatorio");
+        }
+    }
+    static void main(String[] args) {
+        Fusionar_Ficheros ff = new Fusionar_Ficheros();
+        Estudiantado xml = ff.leerFicherosXML();
+        Estudiantado json = ff.leerFicherosJson();
+        TreeMap<Integer,Estudiante> treeMap = new TreeMap<>();
+
+        if(xml != null && json != null){ //Nos aseguramos que el objeto xml y json no están vacíos y lo mostramos por consola
+            System.out.println("Hay " + xml.getEstudiante().size() + " elementos en el archivo xml");
+            System.out.println("Hay " + json.getEstudiante().size()+ " elementos en el archivo json" + "\n");
+
+            treeMap = ff.fusionar_Ficheros (xml,json);
+            System.out.println("\n" + "Se han añadido " + treeMap.size() + " estudiantes en total");//Muestra el numero de estudiantes que hay en TreeMap creado
+            System.out.println(treeMap.keySet());//Muestra todas las claves(idMatriculas en este caso) de TreeMap, ordenados de menor a mayor.
+            //ff.fichero_Aleatorio (treeMap); Para ejecutar el metodo y mostrar el raf.length
+        }else{
+            System.out.println("Los ficheros XML y Json están vacíos o no son válidos.");//Mensaje de error si esta vacío el objeto o no se valida como debe ser.
+        }
     }
 }
+/* OTRA FORMA DE HACER LA FUSIÓN, COMPROBANDO LOS REPETIDOS A TRAVES DE LOS IDMATRICULA, MOSTRANDOLOS POR PANTALLA Y AÑADIENDO LOS NO REPETIDOS AL TREEMAP.
+for (Estudiante estudiantesJson: estudiantadoJson.getEstudiante()){
+    if (!estudianteTreeMap.containsKey(estudiantesJson.getIdMatricula())){ Pregunta si una clave ya esta en el mapa, true si existe y false sino.
+        estudianteTreeMap.put(estudiantesJson.getIdMatricula(),estudiantesJson);
+    }else{
+        System.out.println("Estudiante repetido, no se ha añadido el estudiante: " + estudiantesJson.getIdMatricula());
+    }
+} return estudianteTreeMap;*/
