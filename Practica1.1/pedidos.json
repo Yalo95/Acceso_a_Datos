@@ -1,0 +1,282 @@
+{
+    "pedidos": {
+        "pedido": [
+            {
+                "id": "P001",
+                "dni": "12345678A",
+                "fecha": "2023-10-01",
+                "total": 30.00,
+                "articulos": [
+                    {
+                        "articulo": {
+                            "productoId": "A001",
+                            "descripcion": "Producto A",
+                            "cantidad": 2,
+                            "precioUnitario": 30.00
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "P002",
+                "dni": "23456789B",
+                "fecha": "2023-10-02",
+                "total": 200.00,
+                "articulos": [
+                    {
+                        "articulo": {
+                            "productoId": "A003",
+                            "descripcion": "Producto C",
+                            "cantidad": 4,
+                            "precioUnitario": 40.00
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "P003",
+                "dni": "34567890C",
+                "fecha": "2023-10-03",
+                "total": 300.00,
+                "articulos": {
+                    "articulo": [
+                        {
+                            "productoId": "A004",
+                            "descripcion": "Producto D",
+                            "cantidad": 3,
+                            "precioUnitario": 50.00
+                        },
+                        {
+                            "productoId": "A005",
+                            "descripcion": "Producto E",
+                            "cantidad": 1,
+                            "precioUnitario": 150.00
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "P004",
+                "dni": "45678901D",
+                "fecha": "2023-10-04",
+                "total": 250.00,
+                "articulos": {
+                    "articulo": [
+                        {
+                            "productoId": "A006",
+                            "descripcion": "Producto F",
+                            "cantidad": 5,
+                            "precioUnitario": 30.00
+                        },
+                        {
+                            "productoId": "A007",
+                            "descripcion": "Producto G",
+                            "cantidad": 2,
+                            "precioUnitario": 50.00
+                        },
+                        {
+                            "productoId": "A008",
+                            "descripcion": "Producto H",
+                            "cantidad": 3,
+                            "precioUnitario": 30.00
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "P005",
+                "dni": "56789012E",
+                "fecha": "2023-10-05",
+                "total": 180.00,
+                "articulos": [
+                    {
+                        "articulo": {
+                            "productoId": "A009",
+                            "descripcion": "Producto I",
+                            "cantidad": 1,
+                            "precioUnitario": 90.00
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "P006",
+                "dni": "67890123F",
+                "fecha": "2023-10-06",
+                "total": 220.00,
+                "articulos": {
+                    "articulo": [
+                        {
+                            "productoId": "A010",
+                            "descripcion": "Producto J",
+                            "cantidad": 4,
+                            "precioUnitario": 40.00
+                        },
+                        {
+                            "productoId": "A011",
+                            "descripcion": "Producto K",
+                            "cantidad": 2,
+                            "precioUnitario": 50.00
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "P007",
+                "dni": "78901234G",
+                "fecha": "2023-10-07",
+                "total": 90.00,
+                "articulos": [
+                    {
+                        "articulo": {
+                            "productoId": "A012",
+                            "descripcion": "Producto L",
+                            "cantidad": 1,
+                            "precioUnitario": 90.00
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "P008",
+                "dni": "89012345H",
+                "fecha": "2023-10-08",
+                "total": 130.00,
+                "articulos": {
+                    "articulo": [
+                        {
+                            "productoId": "A013",
+                            "descripcion": "Producto M",
+                            "cantidad": 2,
+                            "precioUnitario": 40.00
+                        },
+                        {
+                            "productoId": "A014",
+                            "descripcion": "Producto N",
+                            "cantidad": 1,
+                            "precioUnitario": 50.00
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "P009",
+                "dni": "90123456I",
+                "fecha": "2023-10-09",
+                "total": 170.00,
+                "articulos": {
+                    "articulo": [
+                        {
+                            "productoId": "A015",
+                            "descripcion": "Producto O",
+                            "cantidad": 3,
+                            "precioUnitario": 40.00
+                        },
+                        {
+                            "productoId": "A016",
+                            "descripcion": "Producto P",
+                            "cantidad": 1,
+                            "precioUnitario": 50.00
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "P010",
+                "dni": "01234567J",
+                "fecha": "2023-10-10",
+                "total": 140.00,
+                "articulos": [
+                    {
+                        "articulo": {
+                            "productoId": "A018",
+                            "descripcion": "Producto R",
+                            "cantidad": 1,
+                            "precioUnitario": 80.00
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "P011",
+                "dni": "12345678K",
+                "fecha": "2023-10-11",
+                "total": 110.00,
+                "articulos": [
+                    {
+                        "articulo": {
+                            "productoId": "A019",
+                            "descripcion": "Producto S",
+                            "cantidad": 1,
+                            "precioUnitario": 110.00
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "P012",
+                "dni": "23456789L",
+                "fecha": "2023-10-12",
+                "total": 175.00,
+                "articulos": [
+                    {
+                        "articulo": {
+                            "productoId": "A020",
+                            "descripcion": "Producto T",
+                            "cantidad": 5,
+                            "precioUnitario": 35.00
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "P013",
+                "dni": "34567890M",
+                "fecha": "2023-10-13",
+                "total": 95.00,
+                "articulos": [
+                    {
+                        "articulo": {
+                            "productoId": "A021",
+                            "descripcion": "Producto U",
+                            "cantidad": 1,
+                            "precioUnitario": 95.00
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "P014",
+                "dni": "45678901N",
+                "fecha": "2023-10-14",
+                "total": 130.00,
+                "articulos": [
+                    {
+                        "articulo": {
+                            "productoId": "A022",
+                            "descripcion": "Producto V",
+                            "cantidad": 2,
+                            "precioUnitario": 65.00
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "P015",
+                "dni": "56789012O",
+                "fecha": "2023-10-15",
+                "total": 160.00,
+                "articulos": [
+                    {
+                        "articulo": {
+                            "productoId": "A023",
+                            "descripcion": "Producto W",
+                            "cantidad": 4,
+                            "precioUnitario": 40.00
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

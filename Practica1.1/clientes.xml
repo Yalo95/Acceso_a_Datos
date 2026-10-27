@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clientes>
+    <cliente dni="12345678A">
+        <nombre>Juan Pérez</nombre>
+        <direccion>Calle Mayor, 1</direccion>
+        <telefono>600123456</telefono>
+        <email>juan.perez@example.com</email>
+    </cliente>
+    <cliente dni="23456789B">
+        <nombre>Ana Gómez</nombre>
+        <direccion>Calle Luna, 2</direccion>
+        <telefono>600234567</telefono>
+        <email>ana.gomez@example.com</email>
+    </cliente>
+    <cliente dni="34567890C">
+        <nombre>Carlos Ruiz</nombre>
+        <direccion>Calle Sol, 3</direccion>
+        <telefono>600345678</telefono>
+        <email>carlos.ruiz@example.com</email>
+    </cliente>
+    <cliente dni="45678901D">
+        <nombre>María López</nombre>
+        <direccion>Calle Estrella, 4</direccion>
+        <telefono>600456789</telefono>
+        <email>maria.lopez@example.com</email>
+    </cliente>
+    <cliente dni="56789012E">
+        <nombre>Javier Martínez</nombre>
+        <direccion>Calle Rayo, 5</direccion>
+        <telefono>600567890</telefono>
+        <email>javier.martinez@example.com</email>
+    </cliente>
+    <cliente dni="67890123F">
+        <nombre>Laura Sánchez</nombre>
+        <direccion>Calle Nube, 6</direccion>
+        <telefono>600678901</telefono>
+        <email>laura.sanchez@example.com</email>
+    </cliente>
+    <cliente dni="78901234G">
+        <nombre>Fernando Torres</nombre>
+        <direccion>Calle Mar, 7</direccion>
+        <telefono>600789012</telefono>
+        <email>fernando.torres@example.com</email>
+    </cliente>
+    <cliente dni="89012345H">
+        <nombre>Clara Martín</nombre>
+        <direccion>Calle Tierra, 8</direccion>
+        <telefono>600890123</telefono>
+        <email>clara.martin@example.com</email>
+    </cliente>
+    <cliente dni="90123456I">
+        <nombre>David Fernández</nombre>
+        <direccion>Calle Viento, 9</direccion>
+        <telefono>600901234</telefono>
+        <email>david.fernandez@example.com</email>
+    </cliente>
+    <cliente dni="01234567J">
+        <nombre>Isabel Herrera</nombre>
+        <direccion>Calle Agua, 10</direccion>
+        <telefono>600012345</telefono>
+        <email>isabel.herrera@example.com</email>
+    </cliente>
+    <cliente dni="12345678K">
+        <nombre>Pedro Romero</nombre>
+        <direccion>Calle Fuego, 11</direccion>
+        <telefono>600123456</telefono>
+        <email>pedro.romero@example.com</email>
+    </cliente>
+    <cliente dni="23456789L">
+        <nombre>Elena Martínez</nombre>
+        <direccion>Calle Hielo, 12</direccion>
+        <telefono>600234567</telefono>
+        <email>elena.martinez@example.com</email>
+    </cliente>
+    <cliente dni="34567890M">
+        <nombre>Ángel Gómez</nombre>
+        <direccion>Calle Nieve, 13</direccion>
+        <telefono>600345678</telefono>
+        <email>angel.gomez@example.com</email>
+    </cliente>
+    <cliente dni="45678901N">
+        <nombre>Rosa Castillo</nombre>
+        <direccion>Calle Trueno, 14</direccion>
+        <telefono>600456789</telefono>
+        <email>rosa.castillo@example.com</email>
+    </cliente>
+    <cliente dni="56789012O">
+        <nombre>Ricardo Ramos</nombre>
+        <direccion>Calle Relámpago, 15</direccion>
+        <telefono>600567890</telefono>
+        <email>ricardo.ramos@example.com</email>
+    </cliente>
+</clientes>
