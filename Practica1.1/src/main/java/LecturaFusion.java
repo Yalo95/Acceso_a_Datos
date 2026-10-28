@@ -3,8 +3,7 @@ import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Unmarshaller;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
@@ -24,10 +23,13 @@ public class LecturaFusion {
         return clientesXML;
     }
 
-    public void leerJson(String ruta) throws IOException { //Propagamos la excepcion al main o a quien llame al metodo.
+    public void leerJson(String ruta, Clientes clientes) throws IOException { //Propagamos la excepcion al main o a quien llame al metodo.
         //Leemos pedidos.json
         Path rutaPath = Paths.get(ruta);
-
+        Map<String, Cliente > clientesDNI = new HashMap<>();//Porque al buscar por DNI no necesitamos un TreeMap para buscar de manera ordenada.
+        for (Cliente cliente: clientes.getClientes()){
+            clientesDNI.put(cliente.getDni(), cliente);
+        }
         try (
                 Reader r = Files.newBufferedReader(rutaPath, StandardCharsets.UTF_8)) {//Leemos el fichero json
 
@@ -36,7 +38,6 @@ public class LecturaFusion {
             JsonObject pJson_Object2 = pJson_Object.get("pedidos").getAsJsonObject();//Cogemos y guardamos el primer nivel de ese objeto, pedidos en el json.
 
             JsonArray pJson = pJson_Object2.get("pedido").getAsJsonArray();//Cogemos y guardamos en forma de Array el segundo nivel del objeto, pedido(con sus hijos)
-            System.out.println(pJson.size());
 
             for (JsonElement pJ : pJson) {//Recorremos el array pJson como elemento
                 JsonObject pedidosJson_Object = pJ.getAsJsonObject();//Pasamos ese elemento con los datos del array a Objeto.
@@ -48,8 +49,12 @@ public class LecturaFusion {
                 pedidosJson.setArticulos(leerArticulos(pedidosJson_Object.get("articulos")));
 
                 String dni = pedidosJson_Object.get("dni").getAsString();//Cogemos el dni del Objeto de los pedidos json, que si tiene el dni, y lo guardamos como String.
-                System.out.println(dni + "||" + pedidosJson);//Imprimimos el dni y de cada pedido y su consecuente pedido.
-
+                Cliente cliente = clientesDNI.get(dni);
+                if (cliente != null) {
+                    cliente.añadirPedido(pedidosJson);
+                }else {
+                    System.err.println("El pedido con id: " + pedidosJson.getId() + " no corresponde a ningun cliente");
+                }
             }
         }
     }

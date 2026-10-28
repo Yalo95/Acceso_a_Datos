@@ -83,4 +83,9 @@ public class Cliente {
                 ", pedidos=" + pedidos +
                 '}' + "\n";
     }
+    public void añadirPedido(Pedido pedido) { //Con este metodo nos aseguramos de que si alguna vez hay un cambio en la estructura de datos de Clientes,
+        // solamente debamos cambiar este metodo y no todos los getPedidos de otras partes del codigo, porque ya no devolveria una lista.
+        pedidos.add(pedido);
+
+    }
 }

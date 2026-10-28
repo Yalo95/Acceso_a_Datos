@@ -8,8 +8,8 @@ public class Main {
 
         try{//Lo envolvemos en el try para capturar la excepcion.
             Clientes clientesXML = lectura.leerXML("clientes.xml");
+            lectura.leerJson("pedidos.json", clientesXML);
             System.out.println(clientesXML);
-            lectura.leerJson("pedidos.json");
         } catch (JAXBException e) {
             System.err.println("No se ha podido leer el fichero XML " + e.getMessage());
         } catch (IOException e) {
