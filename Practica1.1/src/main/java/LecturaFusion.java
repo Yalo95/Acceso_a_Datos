@@ -51,7 +51,7 @@ public class LecturaFusion {
                 String dni = pedidosJson_Object.get("dni").getAsString();//Cogemos el dni del Objeto de los pedidos json, que si tiene el dni, y lo guardamos como String.
                 Cliente cliente = clientesDNI.get(dni);
                 if (cliente != null) {
-                    cliente.añadirPedido(pedidosJson);
+                    cliente.añadirPedido(pedidosJson);//Para enlazar el pedido con el dni del cliente
                 }else {
                     System.err.println("El pedido con id: " + pedidosJson.getId() + " no corresponde a ningun cliente");
                 }

@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<clientes>
+    <cliente dni="12345678A">
+        <nombre>Juan Pérez</nombre>
+        <direccion>Calle Mayor, 1</direccion>
+        <telefono>600123456</telefono>
+        <email>juan.perez@example.com</email>
+        <pedidos>
+            <pedido id="P001">
+                <fecha>2023-10-01</fecha>
+                <total>30.0</total>
+                <articulos>
+                    <articulo productoId="A001">
+                        <descripcion>Producto A</descripcion>
+                        <cantidad>2</cantidad>
+                        <precioUnitario>30.0</precioUnitario>
+                    </articulo>
+                </articulos>
+            </pedido>
+        </pedidos>
+    </cliente>
+    <cliente dni="23456789B">
+        <nombre>Ana Gómez</nombre>
+        <direccion>Calle Luna, 2</direccion>
+        <telefono>600234567</telefono>
+        <email>ana.gomez@example.com</email>
+        <pedidos>
+            <pedido id="P002">
+                <fecha>2023-10-02</fecha>
+                <total>200.0</total>
+                <articulos>
+                    <articulo productoId="A003">
+                        <descripcion>Producto C</descripcion>
+                        <cantidad>4</cantidad>
+                        <precioUnitario>40.0</precioUnitario>
+                    </articulo>
+                </articulos>
+            </pedido>
+        </pedidos>
+    </cliente>
+    <cliente dni="34567890C">
+        <nombre>Carlos Ruiz</nombre>
+        <direccion>Calle Sol, 3</direccion>
+        <telefono>600345678</telefono>
+        <email>carlos.ruiz@example.com</email>
+        <pedidos>
+            <pedido id="P003">
+                <fecha>2023-10-03</fecha>
+                <total>300.0</total>
+                <articulos>
+                    <articulo productoId="A004">
+                        <descripcion>Producto D</descripcion>
+                        <cantidad>3</cantidad>
+                        <precioUnitario>50.0</precioUnitario>
+                    </articulo>
+                    <articulo productoId="A005">
+                        <descripcion>Producto E</descripcion>
+                        <cantidad>1</cantidad>
+                        <precioUnitario>150.0</precioUnitario>
+                    </articulo>
+                </articulos>
+            </pedido>
+        </pedidos>
+    </cliente>
+    <cliente dni="45678901D">
+        <nombre>María López</nombre>
+        <direccion>Calle Estrella, 4</direccion>
+        <telefono>600456789</telefono>
+        <email>maria.lopez@example.com</email>
+        <pedidos>
+            <pedido id="P004">
+                <fecha>2023-10-04</fecha>
+                <total>250.0</total>
+                <articulos>
+                    <articulo productoId="A006">
+                        <descripcion>Producto F</descripcion>
+                        <cantidad>5</cantidad>
+                        <precioUnitario>30.0</precioUnitario>
+                    </articulo>
+                    <articulo productoId="A007">
+                        <descripcion>Producto G</descripcion>
+                        <cantidad>2</cantidad>
+                        <precioUnitario>50.0</precioUnitario>
+                    </articulo>
+                    <articulo productoId="A008">
+                        <descripcion>Producto H</descripcion>
+                        <cantidad>3</cantidad>
+                        <precioUnitario>30.0</precioUnitario>
+                    </articulo>
+                </articulos>
+            </pedido>
+        </pedidos>
+    </cliente>
+    <cliente dni="56789012E">
+        <nombre>Javier Martínez</nombre>
+        <direccion>Calle Rayo, 5</direccion>
+        <telefono>600567890</telefono>
+        <email>javier.martinez@example.com</email>
+        <pedidos>
+            <pedido id="P005">
+                <fecha>2023-10-05</fecha>
+                <total>180.0</total>
+                <articulos>
+                    <articulo productoId="A009">
+                        <descripcion>Producto I</descripcion>
+                        <cantidad>1</cantidad>
+                        <precioUnitario>90.0</precioUnitario>
+                    </articulo>
+                </articulos>
+            </pedido>
+        </pedidos>
+    </cliente>
+    <cliente dni="67890123F">
+        <nombre>Laura Sánchez</nombre>
+        <direccion>Calle Nube, 6</direccion>
+        <telefono>600678901</telefono>
+        <email>laura.sanchez@example.com</email>
+        <pedidos>
+            <pedido id="P006">
+                <fecha>2023-10-06</fecha>
+                <total>220.0</total>
+                <articulos>
+                    <articulo productoId="A010">
+                        <descripcion>Producto J</descripcion>
+                        <cantidad>4</cantidad>
+                        <precioUnitario>40.0</precioUnitario>
+                    </articulo>
+                    <articulo productoId="A011">
+                        <descripcion>Producto K</descripcion>
+                        <cantidad>2</cantidad>
+                        <precioUnitario>50.0</precioUnitario>
+                    </articulo>
+                </articulos>
+            </pedido>
+        </pedidos>
+    </cliente>
+    <cliente dni="78901234G">
+        <nombre>Fernando Torres</nombre>
+        <direccion>Calle Mar, 7</direccion>
+        <telefono>600789012</telefono>
+        <email>fernando.torres@example.com</email>
+        <pedidos>
+            <pedido id="P007">
+                <fecha>2023-10-07</fecha>
+                <total>90.0</total>
+                <articulos>
+                    <articulo productoId="A012">
+                        <descripcion>Producto L</descripcion>
+                        <cantidad>1</cantidad>
+                        <precioUnitario>90.0</precioUnitario>
+                    </articulo>
+                </articulos>
+            </pedido>
+        </pedidos>
+    </cliente>
+    <cliente dni="89012345H">
+        <nombre>Clara Martín</nombre>
+        <direccion>Calle Tierra, 8</direccion>
+        <telefono>600890123</telefono>
+        <email>clara.martin@example.com</email>
+        <pedidos>
+            <pedido id="P008">
+                <fecha>2023-10-08</fecha>
+                <total>130.0</total>
+                <articulos>
+                    <articulo productoId="A013">
+                        <descripcion>Producto M</descripcion>
+                        <cantidad>2</cantidad>
+                        <precioUnitario>40.0</precioUnitario>
+                    </articulo>
+                    <articulo productoId="A014">
+                        <descripcion>Producto N</descripcion>
+                        <cantidad>1</cantidad>
+                        <precioUnitario>50.0</precioUnitario>
+                    </articulo>
+                </articulos>
+            </pedido>
+        </pedidos>
+    </cliente>
+    <cliente dni="90123456I">
+        <nombre>David Fernández</nombre>
+        <direccion>Calle Viento, 9</direccion>
+        <telefono>600901234</telefono>
+        <email>david.fernandez@example.com</email>
+        <pedidos>
+            <pedido id="P009">
+                <fecha>2023-10-09</fecha>
+                <total>170.0</total>
+                <articulos>
+                    <articulo productoId="A015">
+                        <descripcion>Producto O</descripcion>
+                        <cantidad>3</cantidad>
+                        <precioUnitario>40.0</precioUnitario>
+                    </articulo>
+                    <articulo productoId="A016">
+                        <descripcion>Producto P</descripcion>
+                        <cantidad>1</cantidad>
+                        <precioUnitario>50.0</precioUnitario>
+                    </articulo>
+                </articulos>
+            </pedido>
+        </pedidos>
+    </cliente>
+    <cliente dni="01234567J">
+        <nombre>Isabel Herrera</nombre>
+        <direccion>Calle Agua, 10</direccion>
+        <telefono>600012345</telefono>
+        <email>isabel.herrera@example.com</email>
+        <pedidos>
+            <pedido id="P010">
+                <fecha>2023-10-10</fecha>
+                <total>140.0</total>
+                <articulos>
+                    <articulo productoId="A018">
+                        <descripcion>Producto R</descripcion>
+                        <cantidad>1</cantidad>
+                        <precioUnitario>80.0</precioUnitario>
+                    </articulo>
+                </articulos>
+            </pedido>
+        </pedidos>
+    </cliente>
+    <cliente dni="12345678K">
+        <nombre>Pedro Romero</nombre>
+        <direccion>Calle Fuego, 11</direccion>
+        <telefono>600123456</telefono>
+        <email>pedro.romero@example.com</email>
+        <pedidos>
+            <pedido id="P011">
+                <fecha>2023-10-11</fecha>
+                <total>110.0</total>
+                <articulos>
+                    <articulo productoId="A019">
+                        <descripcion>Producto S</descripcion>
+                        <cantidad>1</cantidad>
+                        <precioUnitario>110.0</precioUnitario>
+                    </articulo>
+                </articulos>
+            </pedido>
+        </pedidos>
+    </cliente>
+    <cliente dni="23456789L">
+        <nombre>Elena Martínez</nombre>
+        <direccion>Calle Hielo, 12</direccion>
+        <telefono>600234567</telefono>
+        <email>elena.martinez@example.com</email>
+        <pedidos>
+            <pedido id="P012">
+                <fecha>2023-10-12</fecha>
+                <total>175.0</total>
+                <articulos>
+                    <articulo productoId="A020">
+                        <descripcion>Producto T</descripcion>
+                        <cantidad>5</cantidad>
+                        <precioUnitario>35.0</precioUnitario>
+                    </articulo>
+                </articulos>
+            </pedido>
+        </pedidos>
+    </cliente>
+    <cliente dni="34567890M">
+        <nombre>Ángel Gómez</nombre>
+        <direccion>Calle Nieve, 13</direccion>
+        <telefono>600345678</telefono>
+        <email>angel.gomez@example.com</email>
+        <pedidos>
+            <pedido id="P013">
+                <fecha>2023-10-13</fecha>
+                <total>95.0</total>
+                <articulos>
+                    <articulo productoId="A021">
+                        <descripcion>Producto U</descripcion>
+                        <cantidad>1</cantidad>
+                        <precioUnitario>95.0</precioUnitario>
+                    </articulo>
+                </articulos>
+            </pedido>
+        </pedidos>
+    </cliente>
+    <cliente dni="45678901N">
+        <nombre>Rosa Castillo</nombre>
+        <direccion>Calle Trueno, 14</direccion>
+        <telefono>600456789</telefono>
+        <email>rosa.castillo@example.com</email>
+        <pedidos>
+            <pedido id="P014">
+                <fecha>2023-10-14</fecha>
+                <total>130.0</total>
+                <articulos>
+                    <articulo productoId="A022">
+                        <descripcion>Producto V</descripcion>
+                        <cantidad>2</cantidad>
+                        <precioUnitario>65.0</precioUnitario>
+                    </articulo>
+                </articulos>
+            </pedido>
+        </pedidos>
+    </cliente>
+    <cliente dni="56789012O">
+        <nombre>Ricardo Ramos</nombre>
+        <direccion>Calle Relámpago, 15</direccion>
+        <telefono>600567890</telefono>
+        <email>ricardo.ramos@example.com</email>
+        <pedidos>
+            <pedido id="P015">
+                <fecha>2023-10-15</fecha>
+                <total>160.0</total>
+                <articulos>
+                    <articulo productoId="A023">
+                        <descripcion>Producto W</descripcion>
+                        <cantidad>4</cantidad>
+                        <precioUnitario>40.0</precioUnitario>
+                    </articulo>
+                </articulos>
+            </pedido>
+        </pedidos>
+    </cliente>
+</clientes>
