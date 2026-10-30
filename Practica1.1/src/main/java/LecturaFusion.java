@@ -53,7 +53,7 @@ public class LecturaFusion {
                 if (cliente != null) {
                     cliente.añadirPedido(pedidosJson);//Para enlazar el pedido con el dni del cliente
                 }else {
-                    System.err.println("El pedido con id: " + pedidosJson.getId() + " no corresponde a ningun cliente");
+                    System.err.println("El pedido con id: " + pedidosJson.getId() + " no corresponde a ningún cliente");
                 }
             }
         }
