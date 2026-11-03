@@ -70,7 +70,8 @@ public class FicheroAleatorio {
 
         try(RandomAccessFile raf = new RandomAccessFile(ruta,"r")){
 
-            raf.seek(posicion * TAM_TOTAL_REGISTRO);
+            raf.seek(posicion * TAM_TOTAL_REGISTRO);//.seek coloca el puntero en la posicion que le indiquemos,
+            // en este caso, la posicion del registro que queremos leer multiplicado por el tamaño de cada registro.
 
             String dni = leerFicheroAleatorio(raf,TAM_DNI);
             String nombre =leerFicheroAleatorio(raf,TAM_NOMBRE);
@@ -95,7 +96,8 @@ public class FicheroAleatorio {
     }
     public long contarRegistros (String ruta) throws IOException {//Metodo para contar los registros del archivo, necesario para pasarle los rangos que se quieran a traves del scanner.
         try(RandomAccessFile raf = new RandomAccessFile(ruta, "r")){
-            long numeroRegistros = raf.length() / TAM_TOTAL_REGISTRO;
+            long numeroRegistros = raf.length() / TAM_TOTAL_REGISTRO; //Usamos long porque el tamaño del archivo esta en bytes y puede ser muy grande y no caber en un int.
+            // Dividimos el tamaño del archivo entre el tamaño de cada registro para obtener el numero de registros.
             return numeroRegistros;
         }
     }

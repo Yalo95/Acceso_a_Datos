@@ -17,34 +17,37 @@ public class Main {
             String entrada = scanner.nextLine().trim();
             List<Integer> listaPosiciones = new ArrayList<>();
 
-            try {//Usamos matches, que comprueba que aquello que le pasemos siga un patron.
+            try {//Usamos matches, que comprueba que aquello que le pasemos siga un patron. Si no lo hace, devuelve false. En este caso, el patron es una expresion regular.
                 if (entrada.matches("\\d+")) { //Para cuando es un digito solo con la d, pero en este caso como pueden ser mas de uno se le añade + para indicarlo
                     listaPosiciones.add(Integer.parseInt(entrada));
-                } else if (entrada.matches("\\d+-\\d+")) {//Este sería un o mas digitos, con - entre medias de ambos.
-                    String[] entradaArray = entrada.split("-");
-                    Integer inicio = Integer.parseInt(entradaArray[0]);
-                    Integer fin = Integer.parseInt(entradaArray[1]);
+                }
+                else if (entrada.matches("\\d+-\\d+")) {//Este sería uno o mas digitos, con - entre medias de ambos.
+                        String[] entradaRangos = entrada.split("-");
+                        Integer inicio = Integer.parseInt(entradaRangos[0]);
+                        Integer fin = Integer.parseInt(entradaRangos[1]);
 
-                    if (inicio > fin){
-                        System.out.println("El inicio no puede ser mayor que el final");
-                        continue;
-                    }
-                    if (inicio < 1 || fin > numeroRegistros) {
-                        System.out.println("El rango debe estar entre 1 y " + numeroRegistros + ".");
-                        continue;
-                    }
-                    for (int i = inicio; i <= fin; i++) {
-                            listaPosiciones.add(i);
+                        if (inicio > fin){
+                            System.out.println("El inicio no puede ser mayor que el final");
+                            continue;
                         }
-                    } else if (entrada.matches("\\d+(,\\d+)+")) {//Lo que hay entre parentesis repetido una o mas veces.
-                        String[] eArray = entrada.split(",");
-                        for (String entradas : eArray) {
+                        if (inicio < 1 || fin > numeroRegistros) {
+                            System.out.println("El rango debe estar entre 1 y " + numeroRegistros + ".");
+                            continue;
+                        }
+                        for (int i = inicio; i <= fin; i++) {
+                                listaPosiciones.add(i);
+                        }
+                }
+                else if (entrada.matches("\\d+(,\\d+)+")) {//Lo que hay entre parentesis repetido una o mas veces.
+                        String[] entradaPosiciones = entrada.split(",");
+                        for (String entradas : entradaPosiciones) {
                             listaPosiciones.add(Integer.parseInt(entradas));
                         }
-                    } else {
+                }
+                else {
                         System.out.println("El formato introducido no es válido.");
                         continue;
-                    }
+                }
             }catch (NumberFormatException e){// Numeros que no caben en un int
                 System.out.println("El número introducido es demasiado grande.");
                 continue;
