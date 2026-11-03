@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ScannerGlobal {//Scanner basado en Singleton, para que de menos errores. Más efieciente y mayor control de cuando se cierra el scanner.
+public class ScannerGlobal {//Scanner basado en Singleton, para que de menos errores. Más eficiente y mayor control de cuando se cierra el scanner.
 
     private static ScannerGlobal instance;
     private Scanner scanner;
