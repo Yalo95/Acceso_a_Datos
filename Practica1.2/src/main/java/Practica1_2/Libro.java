@@ -64,6 +64,7 @@ public class Libro {
     public void añadirGenero (String genero) { //Para poder añadir ambos generos a la lista.
         generos.add(genero);
     }
+
     public double getPrecio() {
         return precio;
     }

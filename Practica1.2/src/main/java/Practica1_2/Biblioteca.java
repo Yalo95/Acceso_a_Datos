@@ -25,7 +25,7 @@ public class Biblioteca {
     public void setLibros(List<Libro> libros) {
         this.libros = libros;
     }
-    public void addLibro(Libro libro) {
+    public void añadirLibro(Libro libro) {
         this.libros.add(libro);
     }
 
