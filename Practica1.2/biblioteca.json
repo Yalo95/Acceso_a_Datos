@@ -1,0 +1,208 @@
+{
+  "libros": [
+    {
+      "isbn": 2,
+      "autor": "Gabriel García Márqu",
+      "titulo": "Cien años de soledad",
+      "generos": [
+        "Realismo Mágico",
+        "Drama"
+      ],
+      "precio": 19.95,
+      "fechaPublicacion": 1967,
+      "sede": "CENTRAL"
+    },
+    {
+      "isbn": 4,
+      "autor": "Jane Austen",
+      "titulo": "Orgullo y prejuicio",
+      "generos": [
+        "Romance",
+        "Drama"
+      ],
+      "precio": 14.95,
+      "fechaPublicacion": 1813,
+      "sede": "CENTRAL"
+    },
+    {
+      "isbn": 7,
+      "autor": "George Orwell",
+      "titulo": "1984",
+      "generos": [
+        "Ciencia Ficción",
+        "Política"
+      ],
+      "precio": 17.95,
+      "fechaPublicacion": 1949,
+      "sede": "CENTRAL"
+    },
+    {
+      "isbn": 8,
+      "autor": "Isabel Allende",
+      "titulo": "La casa de los espíritus",
+      "generos": [
+        "Drama",
+        "Realismo Mágico"
+      ],
+      "precio": 16.95,
+      "fechaPublicacion": 1982,
+      "sede": "CENTRAL"
+    },
+    {
+      "isbn": 9,
+      "autor": "Herman Melville",
+      "titulo": "Moby-Dick",
+      "generos": [
+        "Aventura",
+        "Clásico"
+      ],
+      "precio": 18.95,
+      "fechaPublicacion": 1851,
+      "sede": "CENTRAL"
+    },
+    {
+      "isbn": 12,
+      "autor": "Arthur Conan Doyle",
+      "titulo": "Estudio en escarlata",
+      "generos": [
+        "Misterio",
+        "Policial"
+      ],
+      "precio": 12.95,
+      "fechaPublicacion": 1887,
+      "sede": "CENTRAL"
+    },
+    {
+      "isbn": 14,
+      "autor": "F. Scott Fitzgerald",
+      "titulo": "El gran Gatsby",
+      "generos": [
+        "Clásico",
+        "Drama"
+      ],
+      "precio": 13.95,
+      "fechaPublicacion": 1925,
+      "sede": "CENTRAL"
+    },
+    {
+      "isbn": 16,
+      "autor": "Bram Stoker",
+      "titulo": "Drácula",
+      "generos": [
+        "Terror",
+        "Clásico"
+      ],
+      "precio": 15.95,
+      "fechaPublicacion": 1897,
+      "sede": "CENTRAL"
+    },
+    {
+      "isbn": 17,
+      "autor": "Ernest Hemingway",
+      "titulo": "El viejo y el mar",
+      "generos": [
+        "Aventura",
+        "Drama"
+      ],
+      "precio": 11.95,
+      "fechaPublicacion": 1952,
+      "sede": "CENTRAL"
+    },
+    {
+      "isbn": 19,
+      "autor": "Ray Bradbury",
+      "titulo": "Fahrenheit 451",
+      "generos": [
+        "Ciencia Ficción",
+        "Distopía"
+      ],
+      "precio": 14.95,
+      "fechaPublicacion": 1953,
+      "sede": "CENTRAL"
+    },
+    {
+      "isbn": 20,
+      "autor": "Victor Hugo",
+      "titulo": "Los miserables",
+      "generos": [
+        "Clásico",
+        "Drama"
+      ],
+      "precio": 19.95,
+      "fechaPublicacion": 1862,
+      "sede": "CENTRAL"
+    },
+    {
+      "isbn": 21,
+      "autor": "Paulo Coelho",
+      "titulo": "El Alquimista",
+      "generos": [
+        "Aventura",
+        "Inspiracional"
+      ],
+      "precio": 12.95,
+      "fechaPublicacion": 1988,
+      "sede": "CENTRAL"
+    },
+    {
+      "isbn": 23,
+      "autor": "Umberto Eco",
+      "titulo": "El nombre de la rosa",
+      "generos": [
+        "Misterio",
+        "Histórico"
+      ],
+      "precio": 18.95,
+      "fechaPublicacion": 1980,
+      "sede": "CENTRAL"
+    },
+    {
+      "isbn": 24,
+      "autor": "Emily Brontë",
+      "titulo": "Cumbres Borrascosas",
+      "generos": [
+        "Romance",
+        "Drama"
+      ],
+      "precio": 13.95,
+      "fechaPublicacion": 1847,
+      "sede": "CENTRAL"
+    },
+    {
+      "isbn": 27,
+      "autor": "Leo Tolstoy",
+      "titulo": "Anna Karenina",
+      "generos": [
+        "Drama",
+        "Romance"
+      ],
+      "precio": 17.95,
+      "fechaPublicacion": 1877,
+      "sede": "CENTRAL"
+    },
+    {
+      "isbn": 28,
+      "autor": "Miguel de Cervantes",
+      "titulo": "Don Quijote de la Mancha",
+      "generos": [
+        "Aventura",
+        "Clásico"
+      ],
+      "precio": 20.95,
+      "fechaPublicacion": 1605,
+      "sede": "CENTRAL"
+    },
+    {
+      "isbn": 29,
+      "autor": "Dante Alighieri",
+      "titulo": "La Divina Comedia",
+      "generos": [
+        "Poesía",
+        "Clásico"
+      ],
+      "precio": 22.95,
+      "fechaPublicacion": 1320,
+      "sede": "CENTRAL"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<biblioteca>
+    <libro isbn="1">
+        <autor>J.K. Rowling</autor>
+        <titulo>Harry Potter y la piedra filos</titulo>
+        <clasificacion>
+            <genero>Fantasía</genero>
+            <genero>Juvenil</genero>
+        </clasificacion>
+        <precio>24.95</precio>
+        <fechaPublicacion>1997</fechaPublicacion>
+        <sede>JUVENIL</sede>
+    </libro>
+    <libro isbn="3">
+        <autor>J.R.R. Tolkien</autor>
+        <titulo>El Señor de los Anillos</titulo>
+        <clasificacion>
+            <genero>Fantasía</genero>
+            <genero>Infantil</genero>
+        </clasificacion>
+        <precio>39.95</precio>
+        <fechaPublicacion>1954</fechaPublicacion>
+        <sede>JUVENIL</sede>
+    </libro>
+    <libro isbn="5">
+        <autor>Mark Twain</autor>
+        <titulo>Las aventuras de Tom Sawyer</titulo>
+        <clasificacion>
+            <genero>Aventura</genero>
+            <genero>Juvenil</genero>
+        </clasificacion>
+        <precio>11.95</precio>
+        <fechaPublicacion>1876</fechaPublicacion>
+        <sede>JUVENIL</sede>
+    </libro>
+    <libro isbn="6">
+        <autor>Mary Shelley</autor>
+        <titulo>Frankenstein</titulo>
+        <clasificacion>
+            <genero>Terror</genero>
+            <genero>Infantil</genero>
+        </clasificacion>
+        <precio>15.95</precio>
+        <fechaPublicacion>1818</fechaPublicacion>
+        <sede>JUVENIL</sede>
+    </libro>
+    <libro isbn="10">
+        <autor>Lewis Carroll</autor>
+        <titulo>Alicia en el país de las marav</titulo>
+        <clasificacion>
+            <genero>Fantasía</genero>
+            <genero>Infantil</genero>
+        </clasificacion>
+        <precio>10.95</precio>
+        <fechaPublicacion>1865</fechaPublicacion>
+        <sede>JUVENIL</sede>
+    </libro>
+    <libro isbn="11">
+        <autor>Stephen King</autor>
+        <titulo>It</titulo>
+        <clasificacion>
+            <genero>Terror</genero>
+            <genero>Infantil</genero>
+        </clasificacion>
+        <precio>29.95</precio>
+        <fechaPublicacion>1986</fechaPublicacion>
+        <sede>JUVENIL</sede>
+    </libro>
+    <libro isbn="13">
+        <autor>Antoine de Saint-Exu</autor>
+        <titulo>El Principito</titulo>
+        <clasificacion>
+            <genero>Clásico</genero>
+            <genero>Infantil</genero>
+        </clasificacion>
+        <precio>9.95</precio>
+        <fechaPublicacion>1943</fechaPublicacion>
+        <sede>JUVENIL</sede>
+    </libro>
+    <libro isbn="15">
+        <autor>Harper Lee</autor>
+        <titulo>Matar a un ruiseñor</titulo>
+        <clasificacion>
+            <genero>Drama</genero>
+            <genero>Infantil</genero>
+        </clasificacion>
+        <precio>14.95</precio>
+        <fechaPublicacion>1960</fechaPublicacion>
+        <sede>JUVENIL</sede>
+    </libro>
+    <libro isbn="18">
+        <autor>Jules Verne</autor>
+        <titulo>Viaje al centro de la Tierra</titulo>
+        <clasificacion>
+            <genero>Ciencia Ficción</genero>
+            <genero>Infantil</genero>
+        </clasificacion>
+        <precio>12.95</precio>
+        <fechaPublicacion>1864</fechaPublicacion>
+        <sede>JUVENIL</sede>
+    </libro>
+    <libro isbn="22">
+        <autor>Oscar Wilde</autor>
+        <titulo>El retrato de Dorian Gray</titulo>
+        <clasificacion>
+            <genero>Clásico</genero>
+            <genero>Infantil</genero>
+        </clasificacion>
+        <precio>14.95</precio>
+        <fechaPublicacion>1890</fechaPublicacion>
+        <sede>JUVENIL</sede>
+    </libro>
+    <libro isbn="25">
+        <autor>Aldous Huxley</autor>
+        <titulo>Un mundo feliz</titulo>
+        <clasificacion>
+            <genero>Distopía</genero>
+            <genero>Infantil</genero>
+        </clasificacion>
+        <precio>14.95</precio>
+        <fechaPublicacion>1932</fechaPublicacion>
+        <sede>JUVENIL</sede>
+    </libro>
+    <libro isbn="26">
+        <autor>Charles Dickens</autor>
+        <titulo>Oliver Twist</titulo>
+        <clasificacion>
+            <genero>Clásico</genero>
+            <genero>Juvenil</genero>
+        </clasificacion>
+        <precio>15.95</precio>
+        <fechaPublicacion>1838</fechaPublicacion>
+        <sede>JUVENIL</sede>
+    </libro>
+    <libro isbn="30">
+        <autor>H.G. Wells</autor>
+        <titulo>La guerra de los mundos</titulo>
+        <clasificacion>
+            <genero>Ciencia Ficción</genero>
+            <genero>Juvenil</genero>
+        </clasificacion>
+        <precio>14.95</precio>
+        <fechaPublicacion>1898</fechaPublicacion>
+        <sede>JUVENIL</sede>
+    </libro>
+</biblioteca>
