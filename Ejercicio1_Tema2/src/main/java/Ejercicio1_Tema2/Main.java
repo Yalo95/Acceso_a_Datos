@@ -5,11 +5,15 @@ public class Main {
 
         Clientes clientes = new Clientes();
         MostrarClientes mc = new MostrarClientes();
-        //clientes.crearTabla();
+        //CREACION DE TABLA Y DIFERENTES MODIFICACIONES
+       /*
+        clientes.crearTabla();
         clientes.modificarApellido();
         clientes.borrarSamper();
 
-        //Mostrar clientes ordenados por DNI
+        */
+
+        //MOSTRAR CLIENTES ORDENADOS POR DNI
         mc.mostrarClientesDni();
 
     }

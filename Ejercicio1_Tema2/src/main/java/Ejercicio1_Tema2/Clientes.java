@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class Clientes {
     //DRIVER JDBC
-    String url = "jdbc:mariadb://localhost/demo";
+    String url = "jdbc:mariadb://localhost/pruebaBD";
     String user = "root";
     String password = "root";
 
@@ -46,7 +46,7 @@ public class Clientes {
     }
     public void modificarApellido(){//Modificamos el apellido HOJAS por ROJAS
 
-        try(Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost/demo", "root", "root")) {
+        try(Connection connection = DriverManager.getConnection(url, user, password)) {
 
             connection.createStatement().executeUpdate(modificarRojas);
         } catch (SQLException e) {
@@ -55,7 +55,7 @@ public class Clientes {
     }
     public void borrarSamper(){//Borramos el cliente con apellido SAMPER
 
-        try(Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost/demo", "root", "root")) {
+        try(Connection connection = DriverManager.getConnection(url, user, password)) {
             connection.createStatement().executeUpdate(borrarSamper);
         } catch (SQLException e) {
             throw new RuntimeException(e);
