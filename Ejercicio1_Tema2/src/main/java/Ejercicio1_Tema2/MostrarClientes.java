@@ -36,4 +36,12 @@ public class MostrarClientes extends Clientes{
             System.err.println("Error al conectar con la base de datos: " + e.getMessage());
         }
     }
+    public void dniOrdenInverso(){
+        try(Connection connection = DriverManager.getConnection(url, user, password);
+            Statement stmt = connection.createStatement()){
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
