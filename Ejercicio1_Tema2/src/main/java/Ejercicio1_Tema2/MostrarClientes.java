@@ -35,11 +35,20 @@ public class MostrarClientes extends Clientes{
         } catch (SQLException e){
             System.err.println("Error al conectar con la base de datos: " + e.getMessage());
         }
-    }
+    }//DIAPOSITIVA 44
     public void dniOrdenInverso(){
         try(Connection connection = DriverManager.getConnection(url, user, password);
             Statement stmt = connection.createStatement()){
 
+            int rsti = ResultSet.TYPE_SCROLL_INSENSITIVE;//ResultSet Bidireccional
+            ResultSet resultSet = stmt.executeQuery(ordenarByDni);
+            System.out.println("Clientes ordenados por DNI: ");
+            while(resultSet.next()){
+                String dni = resultSet.getString("DNI");
+                String apellidos = resultSet.getString("APELLIDOS");
+                String cp = resultSet.getString("CP");
+                System.out.println(dni + "\t" + apellidos + "\t" + cp + "\t");
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
