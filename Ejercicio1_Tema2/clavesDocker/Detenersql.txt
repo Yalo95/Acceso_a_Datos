@@ -1,0 +1,9 @@
+Para liberar el puerto, en PowerShell modo admin:
+
+net stop MySQL
+
+Set-Service mysql -StartupType Manual (Con este comando le decimos que no lo arranque windows automáticamente)
+
+net start MySQL(Para arrancarlo manualmente)
+
+netstat -ano | findstr :3306 (Para asegurar que está libre el puerto)
