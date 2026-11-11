@@ -6,12 +6,12 @@ public class Main {
         Clientes clientes = new Clientes();
         MostrarClientes mc = new MostrarClientes();
         //CREACION DE TABLA Y DIFERENTES MODIFICACIONES
-       /*
-        clientes.crearTabla();
+
+      /*  clientes.crearTabla();
         clientes.modificarApellido();
         clientes.borrarSamper();
 
-        */
+      */
 
         //MOSTRAR CLIENTES ORDENADOS POR DNI
         mc.mostrarClientesDni();
