@@ -15,6 +15,9 @@ public class Main {
 
         //MOSTRAR CLIENTES ORDENADOS POR DNI
         mc.mostrarClientesDni();
-
+        //MOSTRAR CLIENTES ORDENADOS POR DNI PERO DE FORMA INVERSA
+        mc.dniOrdenInverso();
+        //MOSTRAR DNI DE CLIENTES
+        mc.mostrarDni();
     }
 }
